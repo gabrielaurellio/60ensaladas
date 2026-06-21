@@ -19,220 +19,813 @@
       --green-bg: #f0faf4;
       --green-border: #b6e9cb;
       --yellow: #f5c800;
+      --yellow-dark: #d4a900;
       --red: #e53935;
       --text: #1a1a1a;
       --text-secondary: #444;
       --gray-bg: #f7f7f7;
+      --white: #ffffff;
       --border: #e0e0e0;
       --max: 620px;
     }
 
-    html, body { overflow-x: hidden; max-width: 100%; }
-    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--text); line-height: 1.55; font-size: 17px; }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
     * { box-sizing: border-box; }
 
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
     section { padding: 52px 0; }
     section + section { padding-top: 0; }
+
     img { max-width: 100%; display: block; }
 
-    /* TOP BAR */
-    .top-bar { background: var(--green); padding: 12px 20px; text-align: center; color: white; font-size: 14px; font-weight: 700; letter-spacing: .3px; }
+    /* ── HEADER BAR ── */
+    .top-bar {
+      background: var(--green);
+      padding: 12px 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
 
-    /* HERO */
-    .hero { background: var(--green-bg); padding: 52px 0 0; border-bottom: 2px solid var(--green-border); }
-    .hero-tag { display: inline-block; background: var(--green); color: white; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; }
-    .hero h1 { font-size: clamp(28px,7vw,42px); font-weight: 900; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+    /* ── HERO ── */
+    .hero {
+      background: var(--green-bg);
+      padding: 52px 0 0;
+      border-bottom: 2px solid var(--green-border);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 7vw, 42px);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
     .hero h1 span { color: var(--green); }
-    .hero h2 { font-size: clamp(16px,4vw,19px); font-weight: 500; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.6; }
-    .hero-img { margin: 0 auto; max-width: 100%; width: 100%; }
+    .hero h2 {
+      font-size: clamp(16px, 4vw, 19px);
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .hero-img {
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+    }
 
-    /* BUTTONS */
-    .btn-cta { display: block; width: 100%; max-width: 520px; margin: 0 auto; background: linear-gradient(135deg,#27c45e,#1a7a3c); color: white; text-align: center; text-decoration: none; font-size: clamp(18px,4.5vw,22px); font-weight: 900; padding: 22px 32px; border-radius: 14px; border: none; cursor: pointer; box-shadow: 0 8px 28px rgba(26,122,60,.4); transition: transform .15s,box-shadow .15s; letter-spacing: .2px; text-transform: uppercase; }
+    /* ── CTA BUTTON ── */
+    .btn-cta {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #27c45e, #1a7a3c);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 900;
+      padding: 22px 32px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(26,122,60,.4);
+      transition: transform .15s, box-shadow .15s;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
     .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(26,122,60,.5); }
     .btn-cta small { display: block; font-size: 13px; font-weight: 500; opacity: .9; margin-top: 5px; text-transform: none; letter-spacing: 0; }
-    .btn-wrapper { text-align: center; padding: 32px 0 8px; }
-    .btn-cta-yellow { display: block; width: 100%; max-width: 520px; margin: 0 auto; background: linear-gradient(135deg,#ffe033,#f5c800); color: #1a1a1a; text-align: center; text-decoration: none; font-size: clamp(18px,4.5vw,22px); font-weight: 900; padding: 22px 32px; border-radius: 14px; border: none; cursor: pointer; box-shadow: 0 8px 28px rgba(245,200,0,.5); transition: transform .15s,box-shadow .15s; letter-spacing: .2px; text-transform: uppercase; }
-    .btn-cta-yellow:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(245,200,0,.6); }
-    .btn-cta-yellow small { display: block; font-size: 13px; font-weight: 600; opacity: .8; margin-top: 5px; text-transform: none; }
 
-    .secure-badges { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 14px; font-size: 13px; color: #666; font-weight: 500; }
+    .btn-wrapper { text-align: center; padding: 32px 0 8px; }
+    .secure-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #666;
+      font-weight: 500;
+    }
     .secure-badges span { display: flex; align-items: center; gap: 5px; }
 
-    /* PROOF STRIP */
-    .proof-strip { background: var(--green); color: white; padding: 24px 20px; text-align: center; }
+    /* ── PROOF STRIP ── */
+    .proof-strip {
+      background: var(--green);
+      color: white;
+      padding: 24px 20px;
+      text-align: center;
+    }
     .proof-strip p { font-size: 16px; font-weight: 600; }
-    .proof-nums { display: flex; justify-content: center; gap: 40px; margin-top: 18px; flex-wrap: wrap; }
+    .proof-nums {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
     .proof-num strong { display: block; font-size: 36px; font-weight: 900; line-height: 1; }
     .proof-num span { font-size: 13px; opacity: .85; margin-top: 4px; display: block; }
 
-    /* CAROUSEL */
-    .carousel-outer { overflow: hidden; width: 100%; margin-top: 28px; }
-    .carousel-row { display: flex; gap: 12px; width: max-content; margin-bottom: 12px; }
-    .carousel-row:first-child { animation: scroll-left 30s linear infinite; }
-    .carousel-row:last-child  { animation: scroll-right 30s linear infinite; }
-    .carousel-row img { height: 280px; width: auto; border-radius: 14px; display: block; flex-shrink: 0; object-fit: cover; }
-    @media (max-width:480px) { .carousel-row img { height: 230px; } }
-    @keyframes scroll-left  { 0% { transform:translateX(0); }     100% { transform:translateX(-50%); } }
-    @keyframes scroll-right { 0% { transform:translateX(-50%); }  100% { transform:translateX(0); } }
+    /* ── TESTIMONIAL CAROUSEL ── */
+    .carousel-outer {
+      overflow: hidden;
+      width: 100%;
+      margin-top: 28px;
+    }
+    .carousel-row {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      margin-bottom: 12px;
+    }
+    .carousel-row:first-child { animation: scroll-left 22s linear infinite; }
+    .carousel-row:last-child  { animation: scroll-right 22s linear infinite; }
+    .carousel-row img {
+      height: 280px;
+      width: auto;
+      border-radius: 14px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    @media (max-width: 480px) {
+      .carousel-row img { height: 230px; }
+    }
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes scroll-right {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
     .carousel-outer:hover .carousel-row { animation-play-state: paused; }
 
-    /* SECTION TITLES */
-    .section-label { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
-    h2.section-title { font-size: clamp(26px,6vw,36px); font-weight: 900; text-align: center; line-height: 1.2; margin-bottom: 28px; }
+    /* ── SECTION HEADINGS ── */
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    h2.section-title {
+      font-size: clamp(26px, 6vw, 36px);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
     h2.section-title span { color: var(--green); }
     h2.section-title em { font-style: normal; text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 5px; }
 
-    /* AGITATION */
-    .rumination-box { background: #fff8f8; border: 1.5px solid #ffd0d0; border-radius: 16px; padding: 28px 24px; margin-top: 24px; }
-    .thought { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; background: white; border-radius: 12px; padding: 16px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.07); }
+    /* ── AGITATION THOUGHTS ── */
+    .rumination-box {
+      background: #fff8f8;
+      border: 1.5px solid #ffd0d0;
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-top: 24px;
+    }
+    .thought {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+      background: white;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    }
     .thought:last-child { margin-bottom: 0; }
     .thought-icon { font-size: 24px; flex-shrink: 0; margin-top: 1px; }
     .thought p { font-size: 16px; color: var(--text-secondary); line-height: 1.45; font-weight: 500; }
 
-    .bridge { background: var(--green-bg); border: 2px solid var(--green-border); border-radius: 16px; padding: 36px 28px; text-align: center; margin-top: 36px; }
-    .bridge h3 { font-size: clamp(20px,5vw,28px); font-weight: 900; line-height: 1.3; margin-bottom: 16px; }
+    /* ── BRIDGE ── */
+    .bridge {
+      background: var(--green-bg);
+      border: 2px solid var(--green-border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+      margin-top: 36px;
+    }
+    .bridge h3 {
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
     .bridge h3 span { color: var(--green); }
     .bridge p { font-size: 17px; color: var(--text-secondary); }
 
-    /* DELIVERABLES */
+    /* ── ENTREGÁVEIS (card full-width) ── */
     .deliverables-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
-    .module-card { border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
-    .module-card-bg { background: linear-gradient(160deg,#0a3d1f 0%,#1a7a3c 100%); padding: 20px 20px 0; text-align: center; position: relative; }
-    .module-card-bg .module-num { display: inline-block; background: var(--yellow); color: #1a1a1a; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 18px; border-radius: 20px; margin-bottom: 12px; }
-    .module-card-bg img { width: 100%; max-width: 340px; margin: 0 auto; display: block; border-radius: 16px; filter: drop-shadow(0 8px 28px rgba(0,0,0,.5)); }
-    .module-card-footer { background: #071f10; padding: 20px 22px; text-align: left; }
-    .module-card-footer h3 { font-size: 18px; font-weight: 900; color: white; line-height: 1.3; margin-bottom: 8px; }
-    .module-card-footer p { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.5; margin-bottom: 12px; }
-    .module-card-footer .val-badge { display: inline-block; background: var(--yellow); color: #1a1a1a; font-size: 12px; font-weight: 900; padding: 5px 16px; border-radius: 20px; }
 
-    /* BONUSES */
-    .bonus-card { border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.18); margin-bottom: 16px; }
-    .bonus-card-bg { background: linear-gradient(160deg,#0d0d1a 0%,#1a1a3a 100%); padding: 20px 20px 0; text-align: center; }
-    .bonus-badge { display: inline-block; background: var(--red); color: white; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; padding: 6px 18px; border-radius: 20px; margin-bottom: 12px; }
-    .bonus-card-bg img { width: 100%; max-width: 300px; margin: 0 auto; display: block; border-radius: 16px; filter: drop-shadow(0 6px 20px rgba(0,0,0,.5)); }
-    .bonus-card-footer { background: #06060f; padding: 18px 20px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .bonus-card-footer h4 { font-size: 16px; font-weight: 900; color: white; line-height: 1.3; flex: 1; }
-    .bonus-card-footer .free-tag { background: var(--green); color: white; font-size: 14px; font-weight: 900; padding: 8px 18px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+    .module-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    }
+    .module-card-bg {
+      background: linear-gradient(160deg, #0a3d1f 0%, #1a7a3c 100%);
+      padding: 20px 20px 0;
+      text-align: center;
+      position: relative;
+    }
+    .module-card-bg .module-num {
+      display: inline-block;
+      background: var(--yellow);
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .module-card-bg img {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 16px;
+      filter: drop-shadow(0 8px 28px rgba(0,0,0,.5));
+    }
+    .module-card-footer {
+      background: #071f10;
+      padding: 20px 22px;
+      text-align: left;
+    }
+    .module-card-footer h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .module-card-footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,.65);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .module-card-footer .val-badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 5px 16px;
+      border-radius: 20px;
+    }
 
-    /* FOR WHO */
+    /* ── BONUSES (card full-width) ── */
+    .bonus-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+      margin-bottom: 16px;
+    }
+    .bonus-card-bg {
+      background: linear-gradient(160deg, #0d0d1a 0%, #1a1a3a 100%);
+      padding: 20px 20px 0;
+      text-align: center;
+    }
+    .bonus-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .bonus-badge.free-badge {
+      background: var(--green);
+    }
+    .bonus-card-bg img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 16px;
+      filter: drop-shadow(0 6px 20px rgba(0,0,0,.5));
+    }
+    .bonus-card-footer {
+      background: #06060f;
+      padding: 18px 20px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .bonus-card-footer h4 {
+      font-size: 16px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.3;
+      flex: 1;
+    }
+    .bonus-card-footer .free-tag {
+      background: var(--green);
+      color: white;
+      font-size: 14px;
+      font-weight: 900;
+      padding: 8px 18px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── FOR WHO ── */
     .for-who-list { margin-top: 20px; }
-    .for-who-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 16px; line-height: 1.5; font-weight: 500; }
+    .for-who-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
     .for-who-item:last-child { border-bottom: none; }
     .for-who-item .check { color: var(--green); font-size: 22px; flex-shrink: 0; margin-top: 1px; }
 
-    /* RECAP */
-    .recap-box { background: var(--gray-bg); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 24px; }
-    .recap-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 15px; }
+    /* ── RECAP BOX ── */
+    .recap-box {
+      background: var(--gray-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    .recap-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 15px;
+    }
     .recap-item:last-child { border-bottom: none; }
     .recap-item .name { font-weight: 600; }
     .recap-item .val { color: #888; text-decoration: line-through; font-size: 14px; white-space: nowrap; margin-left: 8px; }
-    .recap-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 0 0; font-size: 18px; font-weight: 900; border-top: 2px solid var(--border); margin-top: 8px; }
+    .recap-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 0;
+      font-size: 18px;
+      font-weight: 900;
+      border-top: 2px solid var(--border);
+      margin-top: 8px;
+    }
     .recap-total .total-val { color: #888; text-decoration: line-through; font-size: 20px; }
 
-    /* PRICE BOX */
-    .price-box { background: #0f5c2e; border-radius: 20px; padding: 40px 28px; text-align: center; margin-top: 32px; }
-    .price-box img.product-img { max-width: 320px; width: 100%; display: block; margin: 0 auto 28px; border-radius: 12px; }
-    .price-box .old-price { font-size: 18px; color: rgba(255,255,255,.6); margin-bottom: 4px; }
+    /* ── PRICE BOX ── */
+    .price-box {
+      background: #0f5c2e;
+      border-radius: 20px;
+      padding: 40px 28px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .price-box img.product-img {
+      max-width: 320px;
+      width: 100%;
+      display: block;
+      margin: 0 auto 28px;
+      border-radius: 12px;
+    }
+    .price-box .old-price {
+      font-size: 18px;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 4px;
+    }
     .price-box .old-price s { font-size: 26px; color: rgba(255,255,255,.5); }
-    .price-box .new-price { font-size: clamp(72px,20vw,96px); font-weight: 900; color: #fff; line-height: 1; margin-bottom: 4px; letter-spacing: -2px; }
+    .price-box .new-price {
+      font-size: clamp(72px, 20vw, 96px);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -2px;
+    }
     .price-box .new-price sup { font-size: 36px; vertical-align: super; letter-spacing: 0; }
-    .offer-expires { display: inline-block; background: var(--red); color: white; font-size: 13px; font-weight: 800; padding: 8px 20px; border-radius: 20px; margin-bottom: 28px; letter-spacing: .5px; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.75; } }
+    .price-box .installments {
+      font-size: 16px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 32px;
+    }
+    .offer-expires {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 20px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      letter-spacing: .5px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .75; }
+    }
+    .btn-cta-yellow {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #ffe033, #f5c800);
+      color: #1a1a1a;
+      text-align: center;
+      text-decoration: none;
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 900;
+      padding: 22px 32px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(245,200,0,.5);
+      transition: transform .15s, box-shadow .15s;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    .btn-cta-yellow:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(245,200,0,.6); }
+    .btn-cta-yellow small { display: block; font-size: 13px; font-weight: 600; opacity: .8; margin-top: 5px; text-transform: none; }
 
-    /* TWO CHOICES */
-    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
-    @media (max-width:480px) { .choices { grid-template-columns: 1fr; } }
-    .choice-card { border-radius: 16px; padding: 24px 20px; }
-    .choice-no { background: #fff5f5; border: 2px solid #ffcdd2; }
-    .choice-yes { background: var(--green-bg); border: 2px solid var(--green-border); }
-    .choice-card .choice-label { font-size: 12px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    /* ── TWO CHOICES ── */
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    @media (max-width: 480px) { .choices { grid-template-columns: 1fr; } }
+    .choice-card {
+      border-radius: 16px;
+      padding: 24px 20px;
+    }
+    .choice-no {
+      background: #fff5f5;
+      border: 2px solid #ffcdd2;
+    }
+    .choice-yes {
+      background: var(--green-bg);
+      border: 2px solid var(--green-border);
+    }
+    .choice-card .choice-label {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
     .choice-no .choice-label { color: var(--red); }
     .choice-yes .choice-label { color: var(--green); }
-    .choice-card h4 { font-size: 17px; font-weight: 900; margin-bottom: 14px; line-height: 1.3; }
-    .choice-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px; font-size: 14px; line-height: 1.45; color: var(--text-secondary); font-weight: 500; }
+    .choice-card h4 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
     .choice-item .ico { flex-shrink: 0; font-size: 16px; }
 
-    /* AUTHORITY */
-    .authority { background: var(--gray-bg); border-radius: 20px; padding: 36px 28px; margin-top: 12px; }
-    .authority-header { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
-    .authority-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 4px solid var(--green); flex-shrink: 0; }
+    /* ── AUTHORITY ── */
+    .authority {
+      background: var(--gray-bg);
+      border-radius: 20px;
+      padding: 36px 28px;
+      margin-top: 12px;
+    }
+    .authority-header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .authority-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--green);
+      flex-shrink: 0;
+    }
     .authority-name { font-size: 22px; font-weight: 900; }
     .authority-title { font-size: 14px; color: var(--green); font-weight: 700; margin-top: 4px; }
     .authority p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
 
-    /* FAQ */
-    .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+    /* ── FAQ ── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
     .faq-item:last-child { border-bottom: none; }
-    .faq-q { font-size: 17px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; line-height: 1.4; }
+    .faq-q {
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.4;
+    }
     .faq-q::after { content: '+'; font-size: 28px; color: var(--green); flex-shrink: 0; font-weight: 300; }
     .faq-q.open::after { content: '−'; }
-    .faq-a { font-size: 15px; color: var(--text-secondary); line-height: 1.65; margin-top: 14px; display: none; }
+    .faq-a {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-top: 14px;
+      display: none;
+    }
     .faq-a.show { display: block; }
 
-    /* GUARANTEE */
-    .guarantee { background: white; border: 2px dashed var(--green); border-radius: 20px; padding: 36px 28px; text-align: center; margin-top: 32px; }
+    /* ── GUARANTEE ── */
+    .guarantee {
+      background: white;
+      border: 2px dashed var(--green);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+      margin-top: 32px;
+    }
     .guarantee h3 { font-size: 24px; font-weight: 900; margin-bottom: 14px; }
     .guarantee p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
 
-    /* SALADAS SHOWCASE */
-    .saladas-showcase { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
-    .salada-feature-card { border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,.14); }
-    .salada-feature-card img { width: 100%; height: auto; display: block; }
-    .salada-feature-info { background: white; padding: 18px 20px; border-top: 4px solid var(--green); }
-    .salada-feature-info h4 { font-size: 19px; font-weight: 900; line-height: 1.25; margin-bottom: 10px; }
-    .salada-feature-badges { display: flex; gap: 8px; flex-wrap: wrap; }
-    .salada-badge { background: var(--green-bg); color: var(--green); font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 20px; }
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: #aaa;
+      text-align: center;
+      padding: 36px 20px;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 64px;
+    }
+    footer a { color: #aaa; }
 
-    /* SENSORY */
-    .sensory-photo { width: 100%; display: block; }
-    .sensory-photo + .sensory-photo { margin-top: 6px; }
+    /* ── DIVIDERS ── */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green-border), transparent);
+      margin: 52px 0;
+    }
 
-    /* PROOF SECTION (dark) */
-    .proof-section { background: #0a3d1f; padding: 0 0 48px; overflow: hidden; }
-    .proof-header { padding: 48px 20px 28px; }
-    .proof-stars { font-size: 28px; letter-spacing: 2px; margin-bottom: 6px; }
-    .proof-rating-text { font-size: 15px; color: rgba(255,255,255,.7); margin-bottom: 18px; }
+    /* ── HIGHLIGHT TEXT ── */
+    .highlight-box {
+      background: #fffde7;
+      border-left: 5px solid var(--yellow);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    /* ── SALADAS PREVIEW (showcase full-width) ── */
+    .saladas-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .salada-feature-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.14);
+    }
+    .salada-feature-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .salada-feature-info {
+      background: white;
+      padding: 18px 20px;
+      border-top: 4px solid var(--green);
+    }
+    .salada-feature-info h4 {
+      font-size: 19px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .salada-feature-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .salada-badge {
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── SENSORY SECTION ── */
+    .sensory-photo {
+      width: 100%;
+      display: block;
+    }
+    .sensory-photo + .sensory-photo {
+      margin-top: 6px;
+    }
+
+    /* ── PROOF SECTION (dark) ── */
+    .proof-section {
+      background: #0a3d1f;
+      padding: 0 0 48px;
+      overflow: hidden;
+    }
+    .proof-header {
+      padding: 48px 20px 28px;
+    }
+    .proof-stars {
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .proof-rating-text {
+      font-size: 15px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 18px;
+    }
     .proof-rating-text strong { color: #fff; }
-    .proof-headline { font-size: clamp(26px,6.5vw,36px); font-weight: 900; color: white; line-height: 1.2; margin-bottom: 10px; text-align: center; }
+    .proof-headline {
+      font-size: clamp(26px, 6.5vw, 36px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      text-align: center;
+    }
     .proof-headline span { color: var(--yellow); }
-    .proof-sub { font-size: 15px; color: rgba(255,255,255,.6); font-weight: 500; }
-    .ticker-wrap { background: rgba(255,255,255,.07); border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); overflow: hidden; padding: 10px 0; }
-    .ticker-track { display: flex; gap: 40px; width: max-content; animation: ticker-scroll 25s linear infinite; white-space: nowrap; }
-    .ticker-track span { font-size: 13px; color: rgba(255,255,255,.85); font-weight: 500; flex-shrink: 0; }
+    .proof-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,.6);
+      font-weight: 500;
+    }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: rgba(255,255,255,.07);
+      border-top: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      overflow: hidden;
+      padding: 10px 0;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 40px;
+      width: max-content;
+      animation: ticker-scroll 25s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-track span {
+      font-size: 13px;
+      color: rgba(255,255,255,.85);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
     .ticker-track strong { color: white; }
-    @keyframes ticker-scroll { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
-    .proof-cta-wrap { padding: 32px 20px 0; text-align: center; }
-    .proof-cta-label { font-size: 18px; font-weight: 700; color: white; margin-bottom: 16px; }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-    /* E TEM MAIS */
-    .etemais { text-align: center; margin: 40px 0 8px; }
-    .etemais strong { display: inline-block; font-size: clamp(28px,7vw,40px); font-weight: 900; color: var(--green); border-bottom: 4px solid var(--yellow); padding-bottom: 4px; }
-    .etemais p { font-size: 18px; color: var(--text-secondary); margin-top: 10px; font-weight: 500; }
+    /* ── PROOF CTA ── */
+    .proof-cta-wrap {
+      padding: 32px 20px 0;
+      text-align: center;
+    }
+    .proof-cta-label {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+    }
 
-    /* HIGHLIGHT */
-    .highlight-box { background: #fffde7; border-left: 5px solid var(--yellow); border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 28px 0; font-size: 17px; font-weight: 600; line-height: 1.55; }
+    /* ── E TEM MAIS ── */
+    .etemais {
+      text-align: center;
+      margin: 40px 0 8px;
+    }
+    .etemais strong {
+      display: inline-block;
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 900;
+      color: var(--green);
+      border-bottom: 4px solid var(--yellow);
+      padding-bottom: 4px;
+    }
+    .etemais p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      font-weight: 500;
+    }
 
-    /* DIVIDER */
-    .divider { height: 2px; background: linear-gradient(90deg,transparent,var(--green-border),transparent); margin: 52px 0; }
-
-    /* STICKY BAR */
-    .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #0f5c2e; color: white; z-index: 999; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; box-shadow: 0 -4px 24px rgba(0,0,0,.3); }
+    /* sticky bottom bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0f5c2e;
+      color: white;
+      z-index: 999;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.3);
+    }
     .sticky-bar .sticky-text { font-size: 14px; font-weight: 700; line-height: 1.3; }
     .sticky-bar .sticky-price { font-size: 12px; opacity: .8; margin-top: 2px; }
-    .sticky-bar a { background: var(--yellow); color: var(--text); font-weight: 900; font-size: 15px; padding: 12px 22px; border-radius: 10px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    .sticky-bar a {
+      background: var(--yellow);
+      color: var(--text);
+      font-weight: 900;
+      font-size: 15px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
 
-    /* FOOTER */
-    footer { background: var(--text); color: #aaa; text-align: center; padding: 36px 20px; font-size: 13px; line-height: 1.7; margin-top: 64px; }
-    footer a { color: #aaa; }
   </style>
 </head>
 <body>
 
 <!-- TOP BAR -->
-<div class="top-bar">🔒 Pago 100% Seguro &nbsp;·&nbsp; ✅ Acceso Inmediato &nbsp;·&nbsp; Garantía de satisfacción</div>
+<div class="top-bar">
+  🔒 Pago 100% Seguro &nbsp;·&nbsp; ✅ Acceso Inmediato &nbsp;·&nbsp; Garantía de satisfacción
+</div>
 
-<!-- HERO -->
+<!-- ════ HERO ════ -->
 <section class="hero">
   <div class="wrap" style="text-align:center;">
     <div class="hero-tag">Para quienes quieren comer saludable pero no tienen tiempo</div>
@@ -240,23 +833,41 @@
     <h2>Las <strong>60 recetas de ensaladas en frasco</strong> que se conservan frescas por 7 días en el refrigerador. Prepara el domingo, come saludable toda la semana, sin preocuparte por qué vas a comer mañana.</h2>
   </div>
 
-  <img src="https://saladas.compraronline.digital/img/14-lcp.webp" alt="Ensalada en frasco apetitosa" width="620" height="465" fetchpriority="high" style="width:100%;display:block;margin:24px 0 0;" />
+  <!-- Food photo after headline — promise → visual desire → buy -->
+  <img
+    src="https://saladas.compraronline.digital/img/14-lcp.webp"
+    alt="Ensalada en frasco apetitosa"
+    style="width:100%; display:block; margin:24px 0 0;"
+  />
 
-  <div class="wrap" style="text-align:center;padding-top:28px;">
-    <div style="display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto 28px;">
-      <div style="background:white;border-radius:50px;padding:12px 20px;font-size:15px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ Acceso inmediato hoy mismo</div>
-      <div style="background:white;border-radius:50px;padding:12px 20px;font-size:15px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ Sin tiempo ni experiencia previa</div>
-      <div style="background:white;border-radius:50px;padding:12px 20px;font-size:15px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ 60 recetas variadas que duran 7 días</div>
+  <div class="wrap" style="text-align:center; padding-top:28px;">
+    <!-- Bullet pills -->
+    <div style="display:flex; flex-direction:column; gap:10px; max-width:400px; margin:0 auto 28px;">
+      <div style="background:white; border-radius:50px; padding:12px 20px; font-size:15px; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ Acceso inmediato hoy mismo</div>
+      <div style="background:white; border-radius:50px; padding:12px 20px; font-size:15px; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ Sin tiempo ni experiencia previa</div>
+      <div style="background:white; border-radius:50px; padding:12px 20px; font-size:15px; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,.08);">✅ 60 recetas variadas que duran 7 días</div>
     </div>
-    <img src="img/producto.webp" alt="Ensaladas en Frasco: todo lo que vas a recibir" class="hero-img" width="620" height="465" loading="lazy" style="margin:0 auto 24px;border-radius:16px;" />
-    <div style="margin-bottom:8px;"><span style="font-size:16px;color:#999;font-weight:500;">De <s style="color:#ccc;">$49.00</s> &nbsp;→&nbsp; hoy solo</span></div>
-    <div style="font-size:clamp(52px,15vw,72px);font-weight:900;color:var(--green);line-height:1;margin-bottom:4px;letter-spacing:-1px;">$6<span style="font-size:.55em;letter-spacing:0">.90</span></div>
-    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:24px;font-weight:500;">pago único · acceso inmediato</div>
-    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px;">
+
+    <!-- Product image -->
+    <img
+      src="img/produto.webp"
+      alt="Ensaladas en Frasco: todo lo que vas a recibir"
+      class="hero-img"
+      style="margin:0 auto 24px; border-radius:16px;"
+    />
+
+    <!-- Price visible in first fold -->
+    <div style="margin-bottom:8px;">
+      <span style="font-size:16px; color:#999; font-weight:500;">De <s style="color:#ccc;">$49.00</s> &nbsp;→&nbsp; hoy solo</span>
+    </div>
+    <div style="font-size:clamp(52px,15vw,72px); font-weight:900; color:var(--green); line-height:1; margin-bottom:4px; letter-spacing:-1px;">$6<span style="font-size:.55em;letter-spacing:0">.90</span></div>
+    <div style="font-size:13px; color:var(--text-secondary); margin-bottom:24px; font-weight:500;">pago único · acceso inmediato</div>
+
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px;" target="_blank">
       QUIERO ACCESO AHORA POR $6.90
       <small>Haz clic y recibe todo en tu email de inmediato</small>
     </a>
-    <div class="secure-badges" style="justify-content:center;margin-top:14px;">
+    <div class="secure-badges" style="justify-content:center; margin-top:14px;">
       <span>🔒 Compra segura</span>
       <span>📲 Acceso inmediato</span>
       <span>↩️ Garantía de satisfacción</span>
@@ -264,17 +875,26 @@
   </div>
 </section>
 
-<!-- PROOF STRIP -->
+<!-- ════ PROOF STRIP ════ -->
 <div class="proof-strip">
   <p>Mira lo que nuestras alumnas están diciendo:</p>
   <div class="proof-nums">
-    <div class="proof-num"><strong>60+</strong><span>Recetas listas</span></div>
-    <div class="proof-num"><strong>7 días</strong><span>De conservación</span></div>
-    <div class="proof-num"><strong>30 min</strong><span>Preparación semanal</span></div>
+    <div class="proof-num">
+      <strong>60+</strong>
+      <span>Recetas listas</span>
+    </div>
+    <div class="proof-num">
+      <strong>7 días</strong>
+      <span>De conservación</span>
+    </div>
+    <div class="proof-num">
+      <strong>30 min</strong>
+      <span>Preparación semanal</span>
+    </div>
   </div>
 </div>
 
-<!-- SOCIAL PROOF -->
+<!-- ════ SOCIAL PROOF EARLY ════ -->
 <section class="proof-section">
   <div class="proof-header">
     <div class="wrap" style="text-align:center;">
@@ -285,6 +905,7 @@
     </div>
   </div>
 
+  <!-- Ticker de compras ao vivo -->
   <div class="ticker-wrap">
     <div class="ticker-track">
       <span>🟢 <strong>Valentina C.</strong> de Bogotá acaba de comprar</span>
@@ -301,7 +922,7 @@
       <span>🟢 <strong>Andrea S.</strong> de Cusco acaba de comprar</span>
       <span>🟢 <strong>Francisca O.</strong> de Valparaíso acaba de comprar</span>
       <span>🟢 <strong>Jessica M.</strong> de Los Ángeles acaba de comprar</span>
-      <!-- duplicadas -->
+      <!-- duplicadas para loop infinito -->
       <span>🟢 <strong>Valentina C.</strong> de Bogotá acaba de comprar</span>
       <span>🟢 <strong>María F.</strong> de Ciudad de México acaba de comprar</span>
       <span>🟢 <strong>Lucía M.</strong> de Buenos Aires acaba de comprar</span>
@@ -319,62 +940,64 @@
     </div>
   </div>
 
-  <div class="carousel-outer" style="margin-top:0;padding:20px 0;">
+  <!-- Carrossel de depoimentos -->
+  <div class="carousel-outer" style="margin-top:0; padding:20px 0;">
     <div class="carousel-row">
-      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <!-- duplicadas -->
-      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
+      <img src="img/dep-01.webp" alt="Testimonio" />
+      <img src="img/dep-02.webp" alt="Testimonio" />
+      <img src="img/dep-03.webp" alt="Testimonio" />
+      <img src="img/dep-05.webp" alt="Testimonio" />
+      <img src="img/dep-06.webp" alt="Testimonio" />
+      <img src="img/dep-07.webp" alt="Testimonio" />
+      <img src="img/dep-08.webp" alt="Testimonio" />
+      <img src="img/dep-09.webp" alt="Testimonio" />
+      <img src="img/dep-10.webp" alt="Testimonio" />
+      <img src="img/dep-11.webp" alt="Testimonio" />
+      <img src="img/dep-12.webp" alt="Testimonio" />
+      <!-- duplicadas para loop infinito -->
+      <img src="img/dep-01.webp" alt="Testimonio" />
+      <img src="img/dep-02.webp" alt="Testimonio" />
+      <img src="img/dep-03.webp" alt="Testimonio" />
+      <img src="img/dep-05.webp" alt="Testimonio" />
+      <img src="img/dep-06.webp" alt="Testimonio" />
+      <img src="img/dep-07.webp" alt="Testimonio" />
+      <img src="img/dep-08.webp" alt="Testimonio" />
+      <img src="img/dep-09.webp" alt="Testimonio" />
+      <img src="img/dep-10.webp" alt="Testimonio" />
+      <img src="img/dep-11.webp" alt="Testimonio" />
+      <img src="img/dep-12.webp" alt="Testimonio" />
     </div>
     <div class="carousel-row">
-      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <!-- duplicadas -->
-      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
+      <img src="img/dep-11.webp" alt="Testimonio" />
+      <img src="img/dep-12.webp" alt="Testimonio" />
+      <img src="img/dep-05.webp" alt="Testimonio" />
+      <img src="img/dep-06.webp" alt="Testimonio" />
+      <img src="img/dep-07.webp" alt="Testimonio" />
+      <img src="img/dep-08.webp" alt="Testimonio" />
+      <img src="img/dep-09.webp" alt="Testimonio" />
+      <img src="img/dep-10.webp" alt="Testimonio" />
+      <img src="img/dep-01.webp" alt="Testimonio" />
+      <img src="img/dep-02.webp" alt="Testimonio" />
+      <img src="img/dep-03.webp" alt="Testimonio" />
+      <!-- duplicadas para loop infinito -->
+      <img src="img/dep-11.webp" alt="Testimonio" />
+      <img src="img/dep-12.webp" alt="Testimonio" />
+      <img src="img/dep-05.webp" alt="Testimonio" />
+      <img src="img/dep-06.webp" alt="Testimonio" />
+      <img src="img/dep-07.webp" alt="Testimonio" />
+      <img src="img/dep-08.webp" alt="Testimonio" />
+      <img src="img/dep-09.webp" alt="Testimonio" />
+      <img src="img/dep-10.webp" alt="Testimonio" />
+      <img src="img/dep-01.webp" alt="Testimonio" />
+      <img src="img/dep-02.webp" alt="Testimonio" />
+      <img src="img/dep-03.webp" alt="Testimonio" />
     </div>
   </div>
 
+  <!-- CTA dentro da seção escura -->
   <div class="proof-cta-wrap">
     <p class="proof-cta-label">👆 Tú puedes ser la próxima</p>
-    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" style="max-width:460px;margin:0 auto;display:block;">
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" style="max-width:460px; margin:0 auto; display:block;" target="_blank">
       ✅ QUIERO MI ACCESO AHORA POR $6.90
       <small>Acceso inmediato · Garantía de satisfacción · Pago Seguro</small>
     </a>
@@ -383,181 +1006,286 @@
 
 <div class="divider"></div>
 
-<!-- AGITATION -->
+<!-- ════ AGITATION ════ -->
 <section>
   <div class="wrap">
     <p class="section-label">Dime la verdad...</p>
     <h2 class="section-title">Quieres comer saludable, pero siempre hay algo que te lo impide, <em>¿verdad?</em></h2>
-    <h3 style="font-size:17px;font-weight:600;color:var(--text-secondary);text-align:center;margin-bottom:8px;line-height:1.4;">Por eso, cada vez que intentas mantener la ensalada en tu rutina, piensas:</h3>
+    <h3 style="font-size:17px; font-weight:600; color:var(--text-secondary); text-align:center; margin-bottom:8px; line-height:1.4;">
+      Por eso, cada vez que intentas mantener la ensalada en tu rutina, piensas:
+    </h3>
+
     <div class="rumination-box">
-      <div class="thought"><div class="thought-icon">😮‍💨</div><p>"Lavar, cortar, condimentar cada día... no tengo tiempo con mi ritmo de vida."</p></div>
-      <div class="thought"><div class="thought-icon">🗑️</div><p>"Compro los ingredientes y la mitad se echa a perder antes de usarlos. Es tirar el dinero."</p></div>
-      <div class="thought"><div class="thought-icon">😩</div><p>"Lechuga y tomate todos los días aburre. No sé qué más poner para que quede rico."</p></div>
-      <div class="thought"><div class="thought-icon">🍔</div><p>"Cuando no hay nada listo, termino pidiendo delivery. Arruina la dieta y el bolsillo."</p></div>
-      <div class="thought"><div class="thought-icon">😕</div><p>"A veces como ensalada sin sabor solo para no salirme de la dieta. Es un sacrificio."</p></div>
+      <div class="thought">
+        <div class="thought-icon">😮‍💨</div>
+        <p>"Lavar, cortar, condimentar cada día... no tengo tiempo con mi ritmo de vida."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">🗑️</div>
+        <p>"Compro los ingredientes y la mitad se echa a perder antes de usarlos. Es tirar el dinero."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">😩</div>
+        <p>"Lechuga y tomate todos los días aburre. No sé qué más poner para que quede rico."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">🍔</div>
+        <p>"Cuando no hay nada listo, termino pidiendo delivery. Arruina la dieta y el bolsillo."</p>
+      </div>
+      <div class="thought">
+        <div class="thought-icon">😕</div>
+        <p>"A veces como ensalada sin sabor solo para no salirme de la dieta. Es un sacrificio."</p>
+      </div>
     </div>
-    <div class="highlight-box" style="margin-top:28px;">Esto pasa porque todavía no tienes un método simple para preparar ensaladas que se conserven por días y que sean deliciosas de verdad.</div>
+
+    <div class="highlight-box" style="margin-top:28px;">
+      Esto pasa porque todavía no tienes un método simple para preparar ensaladas que se conserven por días y que sean deliciosas de verdad.
+    </div>
+
     <div class="bridge">
       <h3>¿Y si pudieras preparar <span>todas las ensaladas de la semana en 30 minutos</span>, con recetas ricas que duran 7 días en el refrigerador?</h3>
       <p style="margin-top:12px;">¿Eso cambiaría tu rutina alimentaria?</p>
-      <p style="font-size:20px;font-weight:900;color:var(--green);margin-top:12px;">Si es así, las <strong>Ensaladas en Frasco + Aderezos Irresistibles</strong> son para ti.</p>
+      <p style="font-size:20px; font-weight:900; color:var(--green); margin-top:12px;">Si es así, las <strong>Ensaladas en Frasco + Aderezos Irresistibles</strong> son para ti.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- WHAT YOU'LL RECEIVE -->
-<section style="background:#f8faf8;padding-top:52px;padding-bottom:52px;">
+<!-- ════ WHAT YOU'LL RECEIVE ════ -->
+<section style="background:#f8faf8; padding-top:52px; padding-bottom:52px;">
   <div class="wrap">
     <p class="section-label">Lo que vas a recibir</p>
     <h2 class="section-title">Mira <em>todo</em> lo que viene en las <span>Ensaladas en Frasco</span></h2>
-    <p style="text-align:center;font-size:16px;color:var(--text-secondary);margin:-12px 0 32px;">Cada módulo fue creado para eliminar un problema específico de tu rutina alimentaria</p>
+    <p style="text-align:center; font-size:16px; color:var(--text-secondary); margin:-12px 0 32px;">Cada módulo fue creado para eliminar un problema específico de tu rutina alimentaria</p>
 
     <div class="deliverables-grid">
+
+      <!-- Módulo 1 -->
       <div class="module-card">
         <div class="module-card-bg">
           <div class="module-num">📗 Módulo 1 de 3</div>
-          <img src="img/modulo-1.webp" alt="60 Recetas de Ensaladas en Frasco" width="340" loading="lazy" />
+          <img src="img/modulo-1.webp" alt="60 Recetas de Ensaladas en Frasco" />
         </div>
         <div class="module-card-footer">
           <h3>60 Recetas de Ensaladas en Frasco</h3>
           <p>60 recetas completas y variadas: desde simples hasta sofisticadas. Nunca más te faltará inspiración ni repetirás la misma ensalada aburrida.</p>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
             <span class="val-badge">✅ Valor: $19.90</span>
-            <span style="font-size:12px;color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
+            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
           </div>
         </div>
       </div>
+
+      <!-- Módulo 2 -->
       <div class="module-card">
         <div class="module-card-bg">
           <div class="module-num">📘 Módulo 2 de 3</div>
-          <img src="img/modulo-2.webp" alt="El Secreto de las Capas" width="340" loading="lazy" />
+          <img src="img/modulo-2.webp" alt="El Secreto de las Capas" />
         </div>
         <div class="module-card-footer">
           <h3>El Secreto de las Capas: fresca por 7 días</h3>
           <p>El método exacto de armado que garantiza ensalada fresca, crocante y rica por hasta 7 días en el refrigerador. Cero desperdicio.</p>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
             <span class="val-badge">✅ Valor: $14.90</span>
-            <span style="font-size:12px;color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
+            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
           </div>
         </div>
       </div>
+
+      <!-- Módulo 3 -->
       <div class="module-card">
         <div class="module-card-bg">
           <div class="module-num">📙 Módulo 3 de 3</div>
-          <img src="img/modulo-3.webp" alt="Aderezos Irresistibles" width="340" loading="lazy" />
+          <img src="img/modulo-3.webp" alt="Aderezos Irresistibles" />
         </div>
         <div class="module-card-footer">
           <h3>Aderezos Irresistibles Caseros</h3>
           <p>Cada receta incluye su aderezo exclusivo, casero, fácil e infinitamente más rico que los industriales. La ensalada que parece de restaurante.</p>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
             <span class="val-badge">✅ Valor: $14.90</span>
-            <span style="font-size:12px;color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
+            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
           </div>
         </div>
       </div>
-    </div>
 
+    </div><!-- /deliverables-grid -->
+
+    <!-- E TEM MAIS -->
     <div class="etemais" style="margin-top:52px;">
       <strong>🎁 ¡Y hay más!</strong>
       <p>También vas a recibir <strong>3 bonos exclusivos</strong> totalmente gratis:</p>
     </div>
 
+    <!-- Bônus 1 -->
     <div class="bonus-card">
       <div class="bonus-card-bg">
         <span class="bonus-badge">🎁 Bono 1 · GRATIS</span>
-        <img src="img/bonus-1.webp" alt="20 Smoothies Detox" width="300" loading="lazy" style="margin-top:16px;" />
+        <img src="img/bonus-1.webp" alt="20 Smoothies Detox" style="margin-top:16px;" />
       </div>
       <div class="bonus-card-footer">
-        <div><h4>20 Smoothies Detox</h4><p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Complementa tu alimentación saludable</p></div>
-        <div style="text-align:right;"><div style="font-size:11px;color:rgba(255,255,255,.4);text-decoration:line-through;">$9.90</div><span class="free-tag">GRATIS</span></div>
+        <div>
+          <h4>20 Smoothies Detox</h4>
+          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Complementa tu alimentación saludable</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
+          <span class="free-tag">GRATIS</span>
+        </div>
       </div>
     </div>
 
+    <!-- Bônus 2 -->
     <div class="bonus-card">
       <div class="bonus-card-bg">
         <span class="bonus-badge">🎁 Bono 2 · GRATIS</span>
-        <img src="img/bonus-2.webp" alt="5 Shots Matutinos" width="300" loading="lazy" style="margin-top:16px;" />
+        <img src="img/bonus-2.webp" alt="5 Shots Matutinos" style="margin-top:16px;" />
       </div>
       <div class="bonus-card-footer">
-        <div><h4>5 Shots Matutinos</h4><p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Aceleran el metabolismo en 1 minuto</p></div>
-        <div style="text-align:right;"><div style="font-size:11px;color:rgba(255,255,255,.4);text-decoration:line-through;">$9.90</div><span class="free-tag">GRATIS</span></div>
+        <div>
+          <h4>5 Shots Matutinos</h4>
+          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Aceleran el metabolismo en 1 minuto</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
+          <span class="free-tag">GRATIS</span>
+        </div>
       </div>
     </div>
 
+    <!-- Bônus 3 -->
     <div class="bonus-card">
       <div class="bonus-card-bg">
         <span class="bonus-badge">🎁 Bono 3 · GRATIS</span>
-        <img src="img/bonus-3.webp" alt="15 Aguas Saborizadas" width="300" loading="lazy" style="margin-top:16px;" />
+        <img src="img/bonus-3.webp" alt="15 Aguas Saborizadas" style="margin-top:16px;" />
       </div>
       <div class="bonus-card-footer">
-        <div><h4>15 Aguas Saborizadas</h4><p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Hidratación rica con frutas naturales</p></div>
-        <div style="text-align:right;"><div style="font-size:11px;color:rgba(255,255,255,.4);text-decoration:line-through;">$9.90</div><span class="free-tag">GRATIS</span></div>
+        <div>
+          <h4>15 Aguas Saborizadas</h4>
+          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Hidratación rica con frutas naturales</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
+          <span class="free-tag">GRATIS</span>
+        </div>
       </div>
     </div>
 
+    <!-- CTA após todos os entregáveis -->
     <div class="btn-wrapper" style="padding-top:36px;">
-      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta">
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" target="_blank">
         ✅ QUIERO TODO ESTO POR $6.90
         <small>Acceso inmediato a todos los módulos + 3 bonos gratis</small>
       </a>
     </div>
+
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- SALADAS PREVIEW -->
+<!-- ════ SALADAS PREVIEW ════ -->
 <section style="padding-bottom:0;">
   <div class="wrap">
     <p class="section-label">Algunas recetas</p>
     <h2 class="section-title">Conoce algunas de las <span>60 ensaladas</span> que vas a aprender</h2>
+
     <div class="saladas-showcase">
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/6.webp" alt="Ensalada Refrescante" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Refrescante + Aderezo Cítrico</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 100 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Refrescante + Aderezo Cítrico</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 100 kcal</span>
+          </div>
+        </div>
       </div>
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/7.webp" alt="Ensalada Caprese" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Caprese</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 120 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Caprese</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 120 kcal</span>
+          </div>
+        </div>
       </div>
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/9.webp" alt="Ensalada Caesar" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Caesar + Aderezo Original</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 115 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Caesar + Aderezo Original</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 115 kcal</span>
+          </div>
+        </div>
       </div>
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/14-box.webp" alt="Ensalada Big Mac" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Big Mac + Aderezo Especial</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 180 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Big Mac + Aderezo Especial</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 180 kcal</span>
+          </div>
+        </div>
       </div>
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/10.webp" alt="Ensalada Mediterránea" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Mediterránea + Aderezo Agridulce</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 120 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Mediterránea + Aderezo Agridulce</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 120 kcal</span>
+          </div>
+        </div>
       </div>
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/11.webp" alt="Ensalada Toscana" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Toscana + Aderezo Siciliano</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 130 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Toscana + Aderezo Siciliano</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 130 kcal</span>
+          </div>
+        </div>
       </div>
+
       <div class="salada-feature-card">
         <img src="https://saladas.compraronline.digital/img/design.webp" alt="Ensalada Rústica" loading="lazy" />
-        <div class="salada-feature-info"><h4>Ensalada Rústica + Mostaza y Miel</h4><div class="salada-feature-badges"><span class="salada-badge">🗓 Conserva 7 días</span><span class="salada-badge">🔥 160 kcal</span></div></div>
+        <div class="salada-feature-info">
+          <h4>Ensalada Rústica + Mostaza y Miel</h4>
+          <div class="salada-feature-badges">
+            <span class="salada-badge">🗓 Conserva 7 días</span>
+            <span class="salada-badge">🔥 160 kcal</span>
+          </div>
+        </div>
       </div>
+
     </div>
-    <p style="text-align:center;margin-top:24px;font-size:15px;color:#888;font-weight:500;">+ 53 recetas increíbles más esperando por ti...</p>
+
+    <p style="text-align:center; margin-top:24px; font-size:15px; color:#888; font-weight:500;">+ 53 recetas increíbles más esperando por ti...</p>
   </div>
 </section>
 
-<!-- SENSORY SECTION -->
-<section style="padding:0;overflow:hidden;">
-  <div style="text-align:center;padding:40px 20px 24px;">
+<!-- ════ SENSORY SECTION ════ -->
+<section style="padding:0; overflow:hidden;">
+  <div style="text-align:center; padding:40px 20px 24px;">
     <p class="section-label">Frescura en el plato</p>
     <h2 class="section-title">Frescura de restaurante.<br><span>En tu casa. En 30 minutos.</span></h2>
   </div>
   <img class="sensory-photo" src="https://saladas.compraronline.digital/img/3.webp" alt="Ensalada fresca" loading="lazy" />
   <img class="sensory-photo" src="https://saladas.compraronline.digital/img/1.webp" alt="Ensalada colorida" loading="lazy" />
   <img class="sensory-photo" src="https://saladas.compraronline.digital/img/4.webp" alt="Ensalada gourmet" loading="lazy" />
-  <div style="padding:32px 20px 52px;text-align:center;">
-    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px;margin:0 auto;">
+  <div style="padding:32px 20px 52px; text-align:center;">
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px; margin:0 auto;" target="_blank">
       QUIERO HACER ESTAS RECETAS
       <small>Acceso inmediato · Solo $6.90 USD</small>
     </a>
@@ -566,64 +1294,111 @@
 
 <div class="divider"></div>
 
-<!-- FOR WHO -->
+<!-- ════ FOR WHO ════ -->
 <section>
   <div class="wrap">
     <p class="section-label">Para quién es</p>
     <h2 class="section-title">Las <span>Ensaladas en Frasco</span> son para ti si:</h2>
+
     <div class="for-who-list">
-      <div class="for-who-item"><span class="check">✅</span><span>Quieres mantener una alimentación saludable, pero no tienes tiempo de preparar comida todos los días</span></div>
-      <div class="for-who-item"><span class="check">✅</span><span>Te cansas de hacer siempre la misma ensalada de lechuga y tomate, y quieres variedad de verdad</span></div>
-      <div class="for-who-item"><span class="check">✅</span><span>Ya intentaste crear una rutina saludable pero terminas fallando porque no hay nada listo</span></div>
-      <div class="for-who-item"><span class="check">✅</span><span>Te frustras cuando tiras ingredientes porque no los usas a tiempo</span></div>
-      <div class="for-who-item"><span class="check">✅</span><span>Quieres una solución práctica, económica y deliciosa para tener ensalada saludable todos los días</span></div>
-      <div class="for-who-item"><span class="check">✅</span><span>Quieres incluso usar las recetas para generar ingresos extra vendiendo ensaladas en frasco</span></div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Quieres mantener una alimentación saludable, pero no tienes tiempo de preparar comida todos los días</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Te cansas de hacer siempre la misma ensalada de lechuga y tomate, y quieres variedad de verdad</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Ya intentaste crear una rutina saludable pero terminas fallando porque no hay nada listo</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Te frustras cuando tiras ingredientes porque no los usas a tiempo</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Quieres una solución práctica, económica y deliciosa para tener ensalada saludable todos los días</span>
+      </div>
+      <div class="for-who-item">
+        <span class="check">✅</span>
+        <span>Quieres incluso usar las recetas para generar ingresos extra vendiendo ensaladas en frasco</span>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- RECAP + PRICE -->
+<!-- ════ RECAP + PRICE ════ -->
 <section id="price">
   <div class="wrap">
     <p class="section-label">Recapitulando</p>
     <h2 class="section-title">Todo lo que vas a recibir en las <span>Ensaladas en Frasco</span></h2>
+
     <div class="recap-box">
-      <div class="recap-item"><span class="name">✅ 60 Recetas de Ensaladas en Frasco</span><span class="val">$19.90</span></div>
-      <div class="recap-item"><span class="name">✅ El Secreto de las Capas (7 días fresca)</span><span class="val">$14.90</span></div>
-      <div class="recap-item"><span class="name">✅ Aderezos Irresistibles Caseros</span><span class="val">$14.90</span></div>
-      <div class="recap-item"><span class="name">🎁 Bono 1: 20 Smoothies Detox</span><span class="val">$9.90</span></div>
-      <div class="recap-item"><span class="name">🎁 Bono 2: 5 Shots Matutinos</span><span class="val">$9.90</span></div>
-      <div class="recap-item"><span class="name">🎁 Bono 3: 15 Aguas Saborizadas</span><span class="val">$9.90</span></div>
-      <div class="recap-total"><span>Valor total:</span><span class="total-val">$79.40</span></div>
-      <div style="text-align:center;margin-top:16px;padding:14px 0;border-radius:10px;background:var(--green-bg);">
-        <span style="font-size:13px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1px;">Lo que pagas hoy</span><br>
-        <span style="font-size:clamp(40px,11vw,58px);font-weight:900;color:var(--green);line-height:1.1;">$6.90</span>
-        <span style="display:block;font-size:13px;color:var(--text-secondary);margin-top:4px;font-weight:500;">Ahorro de $72.50 (91% de descuento)</span>
+      <div class="recap-item">
+        <span class="name">✅ 60 Recetas de Ensaladas en Frasco</span>
+        <span class="val">$19.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">✅ El Secreto de las Capas (7 días fresca)</span>
+        <span class="val">$14.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">✅ Aderezos Irresistibles Caseros</span>
+        <span class="val">$14.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">🎁 Bono 1: 20 Smoothies Detox</span>
+        <span class="val">$9.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">🎁 Bono 2: 5 Shots Matutinos</span>
+        <span class="val">$9.90</span>
+      </div>
+      <div class="recap-item">
+        <span class="name">🎁 Bono 3: 15 Aguas Saborizadas</span>
+        <span class="val">$9.90</span>
+      </div>
+      <div class="recap-total">
+        <span>Valor total:</span>
+        <span class="total-val">$79.40</span>
+      </div>
+      <div style="text-align:center; margin-top:16px; padding:14px 0; border-radius:10px; background:var(--green-bg);">
+        <span style="font-size:13px; font-weight:700; color:var(--green); text-transform:uppercase; letter-spacing:1px;">Lo que pagas hoy</span><br>
+        <span style="font-size:clamp(40px,11vw,58px); font-weight:900; color:var(--green); line-height:1.1;">$6.90</span>
+        <span style="display:block; font-size:13px; color:var(--text-secondary); margin-top:4px; font-weight:500;">Ahorro de $72.50 (91% de descuento)</span>
       </div>
     </div>
+
     <div class="price-box">
-      <img src="img/producto.webp" alt="Ensaladas en Frasco - Todo lo que vas a recibir" class="product-img" width="320" loading="lazy" />
+      <img src="img/produto.webp" alt="Ensaladas en Frasco - Todo lo que vas a recibir" class="product-img" />
+
       <span class="offer-expires">⏳ OFERTA POR TIEMPO LIMITADO</span>
+
       <p class="old-price">De <s>$49.00</s> hoy te llevas todo por:</p>
       <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
-      <p style="color:rgba(255,255,255,.55);font-size:13px;margin:-12px 0 6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;">USD</p>
-      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow">
+      <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
+
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" target="_blank">
         ✅ QUIERO AHORA · ACCEDER POR $6.90
         <small>Acceso inmediato por email · Garantía de satisfacción</small>
       </a>
-      <p style="color:rgba(255,255,255,.5);font-size:12px;margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
+
+      <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- TWO CHOICES -->
+<!-- ════ TWO CHOICES ════ -->
 <section>
   <div class="wrap">
     <h2 class="section-title">Ahora tienes <span>dos opciones</span></h2>
+
     <div class="choices">
       <div class="choice-card choice-no">
         <div class="choice-label">❌ Opción 1</div>
@@ -633,6 +1408,7 @@
         <div class="choice-item"><span class="ico">👉</span><span>Comer siempre la misma ensalada sin gracia</span></div>
         <div class="choice-item"><span class="ico">👉</span><span>Terminar pidiendo delivery porque no hay nada listo</span></div>
       </div>
+
       <div class="choice-card choice-yes">
         <div class="choice-label">✅ Opción 2</div>
         <h4>Con las Ensaladas en Frasco</h4>
@@ -642,12 +1418,14 @@
         <div class="choice-item"><span class="ico">✅</span><span>Alimentación saludable de verdad, sin esfuerzo</span></div>
       </div>
     </div>
-    <p style="text-align:center;font-size:clamp(18px,4.5vw,22px);font-weight:800;margin-top:32px;line-height:1.4;">
+
+    <p style="text-align:center; font-size:clamp(18px,4.5vw,22px); font-weight:800; margin-top:32px; line-height:1.4;">
       Yo sé (y tú también sabes):<br>la <span style="color:var(--green)">opción 2 es la más inteligente.</span>
     </p>
+
     <div class="btn-wrapper">
-      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta">
-        ✅ QUIERO LA OPCIÓN 2 POR $6.90
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" target="_blank">
+        ✅ QUIERO LA OPCIÓN 2 · POR $6.90
         <small>Acceso inmediato · Solo $6.90 USD</small>
       </a>
     </div>
@@ -656,45 +1434,46 @@
 
 <div class="divider"></div>
 
-<!-- AUTHORITY -->
+<!-- ════ AUTHORITY ════ -->
 <section>
   <div class="wrap">
-    <p class="section-label">¿Quién está detrás de las recetas?</p>
-    <h2 class="section-title">Conoce a <span>Priscila Prates</span></h2>
+    <p class="section-label">¿Quién creó esto?</p>
+    <h2 class="section-title">La creadora de las <span>Ensaladas en Frasco</span> es <span>Priscila Prates</span></h2>
+
     <div class="authority">
       <div class="authority-header">
-        <img src="img/priscila.webp" alt="Priscila Prates - Nutricionista" class="authority-photo" width="100" height="100" loading="lazy" />
-        <div><div class="authority-name">Priscila Prates</div><div class="authority-title">Nutricionista</div></div>
+        <img src="img/priscila.webp" alt="Priscila Prates" class="authority-photo" />
+        <div>
+          <div class="authority-name">Priscila Prates</div>
+          <div class="authority-title">Nutricionista</div>
+        </div>
       </div>
-      <p>Mis recetas de Ensaladas en Frasco y Aderezos Irresistibles siempre tuvieron mucho éxito en internet. Decidí reunir las 60 mejores recetas en un solo lugar y compartir este conocimiento contigo también.</p>
-      <p style="margin-top:16px;font-weight:700;">Mira los mensajes que recibo casi todos los días:</p>
+      <p>Las recetas de Ensaladas en Frasco y Aderezos Irresistibles de Priscila siempre tuvieron mucho éxito en internet: son prácticas, deliciosas y funcionan de verdad para quienes tienen una rutina agitada. Después de ayudar a miles de personas a transformar su relación con la alimentación saludable, reunió las <strong>60 mejores recetas</strong> en un único material completo. Ahora llegó tu momento de acceder a este método y nunca más quedarte sin una opción saludable.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- SECOND PROOF SECTION -->
+<!-- ════ MORE TESTIMONIALS ════ -->
 <section class="proof-section">
   <div class="proof-header">
     <div class="wrap" style="text-align:center;">
       <div class="proof-stars">⭐⭐⭐⭐⭐</div>
-      <div class="proof-rating-text">Más de <strong>2.800 personas</strong> ya transformaron su alimentación</div>
-      <h2 class="proof-headline">Mira más <span>resultados reales</span> 👇</h2>
-      <p class="proof-sub">Capturas reales. Sin filtro. Sin edición.</p>
+      <h2 class="proof-headline">Los mensajes que <span>llegan cada día</span> 💬</h2>
+      <p class="proof-sub">Resultados reales de personas reales, sin filtro, sin edición.</p>
     </div>
   </div>
 
   <div class="ticker-wrap">
     <div class="ticker-track">
-      <span>⭐⭐⭐⭐⭐ <strong>Catalina (Santiago):</strong> "Preparo el domingo y disfruto la semana"</span>
       <span>⭐⭐⭐⭐⭐ <strong>Valentina (Bogotá):</strong> "¡Nunca más tiré ensalada a la basura!"</span>
       <span>⭐⭐⭐⭐⭐ <strong>María (CDMX):</strong> "60 recetas increíbles, cambió mi semana"</span>
       <span>⭐⭐⭐⭐⭐ <strong>Carmen (Madrid):</strong> "¡El método de las capas es genial!"</span>
       <span>⭐⭐⭐⭐⭐ <strong>Jessica (Miami):</strong> "Los mejores $6.90 que gasté"</span>
       <span>⭐⭐⭐⭐⭐ <strong>Lucía (Buenos Aires):</strong> "Mi familia adoró los aderezos"</span>
       <span>⭐⭐⭐⭐⭐ <strong>Catalina (Santiago):</strong> "Preparo el domingo y disfruto la semana"</span>
-      <!-- duplicadas -->
+      <!-- duplicadas para loop infinito -->
       <span>⭐⭐⭐⭐⭐ <strong>Valentina (Bogotá):</strong> "¡Nunca más tiré ensalada a la basura!"</span>
       <span>⭐⭐⭐⭐⭐ <strong>María (CDMX):</strong> "60 recetas increíbles, cambió mi semana"</span>
       <span>⭐⭐⭐⭐⭐ <strong>Carmen (Madrid):</strong> "¡El método de las capas es genial!"</span>
@@ -704,66 +1483,66 @@
     </div>
   </div>
 
-  <div class="carousel-outer" style="margin-top:0;padding:20px 0;">
+  <div class="carousel-outer" style="margin-top:0; padding:20px 0;">
     <div class="carousel-row">
-      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <!-- duplicadas -->
-      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
+      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
+      <!-- duplicadas para loop infinito -->
+      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
     </div>
     <div class="carousel-row">
-      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <!-- duplicadas -->
-      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" />
+      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
+      <!-- duplicadas para loop infinito -->
+      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
     </div>
   </div>
 
   <div class="proof-cta-wrap">
     <p class="proof-cta-label">👆 Tú puedes ser la próxima. Accede ahora.</p>
-    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" style="max-width:460px;margin:0 auto;display:block;">
+    <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" style="max-width:460px; margin:0 auto; display:block;" target="_blank">
       ✅ YO TAMBIÉN QUIERO ESE RESULTADO
       <small>Acceso inmediato · Garantía de satisfacción · Pago Seguro</small>
     </a>
@@ -772,42 +1551,49 @@
 
 <div class="divider"></div>
 
-<!-- GUARANTEE -->
+<!-- ════ GUARANTEE ════ -->
 <section>
   <div class="wrap">
     <div class="guarantee">
-      <img src="img/garantia.webp" alt="Garantía de Satisfacción" width="180" loading="lazy" style="width:180px;margin:0 auto 20px;display:block;" />
+      <img src="img/garantia.webp" alt="Garantía de Satisfacción" style="width:180px; margin:0 auto 20px; display:block;" />
       <h3>Haz una receta.<br>Si no te gusta, te devolvemos todo.</h3>
-      <p style="font-size:18px;font-weight:700;color:var(--green);margin-bottom:16px;">Esta es nuestra garantía. Y vale de verdad.</p>
+      <p style="font-size:18px; font-weight:700; color:var(--green); margin-bottom:16px;">Esta es nuestra garantía. Y vale de verdad.</p>
       <p>Accede al material, elige cualquier receta, prepárala y pruébala. Si la ensalada no queda rica, si el aderezo no te impresiona, si por cualquier razón no quedas satisfecha, solo avísanos. Devolvemos el <strong>100% de tu dinero</strong>, sin preguntas, sin burocracia, sin complicaciones.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px;text-align:left;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;"><span style="font-size:20px;">✅</span> Sin necesidad de explicar el motivo</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;"><span style="font-size:20px;">✅</span> Sin burocracia ni demoras</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;"><span style="font-size:20px;">✅</span> 100% del valor de vuelta en tu cuenta</div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px; text-align:left;">
+        <div style="display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600;">
+          <span style="font-size:20px;">✅</span> Sin necesidad de explicar el motivo
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600;">
+          <span style="font-size:20px;">✅</span> Sin burocracia ni demoras
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:15px; font-weight:600;">
+          <span style="font-size:20px;">✅</span> 100% del valor de vuelta en tu cuenta
+        </div>
       </div>
-      <p style="margin-top:20px;font-size:14px;color:#888;font-style:italic;">Tenemos esta confianza porque sabemos que cuando pruebes las recetas, vas a querer hacer todas las 60.</p>
+      <p style="margin-top:20px; font-size:14px; color:#888; font-style:italic;">Tenemos esta confianza porque sabemos que cuando pruebes las recetas, vas a querer hacer todas las 60.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- FAQ -->
+<!-- ════ FAQ ════ -->
 <section>
   <div class="wrap">
-    <p class="section-label">PREGUNTAS FRECUENTES</p>
+    <p class="section-label">Preguntas frecuentes</p>
     <h2 class="section-title"><span>¿Tienes dudas?</span> Aquí las respondemos</h2>
+
     <div class="faq-item">
       <div class="faq-q">¿Cómo recibo mis recetas?</div>
-      <div class="faq-a">En cuanto se confirme el pago, recibes acceso inmediato por WhatsApp y por email con las 60 recetas de ensaladas, los aderezos irresistibles y todos los bonos. Todo disponible para descargar y empezar a usar en el mismo instante. Sin espera, sin burocracia. Cualquier duda, escríbenos a contato@vidaboa.digital y te ayudamos rápido.</div>
+      <div class="faq-a">En cuanto se confirme el pago, recibes acceso inmediato por email con las 60 recetas de ensaladas, los aderezos irresistibles y todos los bonos. Todo disponible para descargar y empezar a usar en el mismo instante. Sin espera, sin burocracia. Cualquier duda, escríbenos a contato@vidaboa.digital</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">¿Las recetas son fáciles de hacer?</div>
-      <div class="faq-a">¡Súper fáciles! Todas las recetas tienen instrucciones claras y paso a paso simple. No necesitas ser experta en la cocina. Si sabes cortar, mezclar y condimentar, puedes hacerlo. Las recetas fueron pensadas para quienes tienen una rutina ocupada y no quieren complicaciones.</div>
+      <div class="faq-a">¡Súper fáciles! Todas las recetas tienen instrucciones claras y paso a paso simple. No necesitas ser experta en la cocina. Si sabes cortar, mezclar y condimentar, puedes hacerlo. Las recetas fueron pensadas para quienes tienen una rutina ocupada.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">¿Cuánto tiempo dura la ensalada en el refrigerador?</div>
-      <div class="faq-a">Cuando se arma correctamente siguiendo el método de las capas, la ensalada dura de 5 a 7 días fresca en el refrigerador. Preparas todo el domingo y tienes almuerzo o cena saludable lista toda la semana. Cero desperdicio, cero trabajo diario.</div>
+      <div class="faq-a">Cuando se arma correctamente siguiendo el método de las capas, la ensalada dura de 5 a 7 días fresca en el refrigerador. Preparas todo el domingo y tienes almuerzo o cena saludable lista toda la semana.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">¿Los ingredientes son difíciles de conseguir?</div>
@@ -824,31 +1610,31 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- ════ FINAL CTA ════ -->
 <section style="padding-bottom:100px;">
   <div class="wrap">
     <div class="price-box">
-      <p style="font-size:clamp(20px,5vw,26px);font-weight:900;color:white;margin-bottom:20px;line-height:1.3;">No pierdas más tiempo.<br>Transforma tu alimentación hoy.</p>
+      <p style="font-size:clamp(20px,5vw,26px); font-weight:900; color:white; margin-bottom:20px; line-height:1.3;">No pierdas más tiempo.<br>Transforma tu alimentación hoy.</p>
       <span class="offer-expires">⏳ Oferta por tiempo limitado</span>
       <p class="old-price" style="margin-top:12px;">De <s>$49.00</s> hoy te llevas todo por:</p>
       <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
-      <p style="color:rgba(255,255,255,.55);font-size:13px;margin:-12px 0 6px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;">USD</p>
-      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow">
+      <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
+      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" target="_blank">
         ✅ QUIERO AHORA · ACCEDER POR $6.90
         <small>Acceso inmediato · Garantía de satisfacción · Pago Seguro</small>
       </a>
-      <p style="color:rgba(255,255,255,.5);font-size:12px;margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
+      <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
     </div>
   </div>
 </section>
 
 <!-- STICKY BAR -->
-<div class="sticky-bar" id="stickyBar" style="display:none;">
+<div class="sticky-bar">
   <div>
     <div class="sticky-text">Ensaladas en Frasco + Aderezos</div>
     <div class="sticky-price">De $49 por solo <strong>$6.90</strong></div>
   </div>
-  <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10">COMPRAR AHORA</a>
+  <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" target="_blank">COMPRAR AHORA</a>
 </div>
 
 <!-- FOOTER -->
@@ -861,22 +1647,31 @@
 </footer>
 
 <script>
-  // FAQ accordion
+  // FAQ accordion — fecha os outros ao abrir um
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
-      const a = q.nextElementSibling;
-      q.classList.toggle('open');
-      a.classList.toggle('show');
+      const answer = q.nextElementSibling;
+      const isOpen = q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(el => {
+        el.classList.remove('open');
+        el.nextElementSibling.classList.remove('show');
+      });
+      if (!isOpen) {
+        q.classList.add('open');
+        answer.classList.add('show');
+      }
     });
   });
 
-  // Sticky bar – aparece depois de passar o hero
-  const heroEl = document.querySelector('.hero');
-  const stickyBar = document.getElementById('stickyBar');
-  const obs = new IntersectionObserver(([e]) => {
-    stickyBar.style.display = e.isIntersecting ? 'none' : 'flex';
-  }, { threshold: 0 });
-  obs.observe(heroEl);
+  // Sticky bar — esconde quando a seção de preço está visível
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      document.querySelector('.sticky-bar').style.display = e.isIntersecting ? 'none' : 'flex';
+    });
+  }, { threshold: 0.5 });
+  const priceSection = document.getElementById('price');
+  if (priceSection) observer.observe(priceSection);
 </script>
+
 </body>
 </html>
