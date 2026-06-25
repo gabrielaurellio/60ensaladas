@@ -600,15 +600,29 @@
 
     /* ── GUARANTEE ── */
     .guarantee {
-      background: white;
-      border: 2px dashed var(--green);
-      border-radius: 20px;
-      padding: 36px 28px;
+      background: linear-gradient(135deg, #f0faf4, #e6f7ed);
+      border: 3px solid var(--green);
+      border-radius: 24px;
+      padding: 40px 28px;
       text-align: center;
       margin-top: 32px;
+      box-shadow: 0 8px 32px rgba(39,196,94,.18);
     }
-    .guarantee h3 { font-size: 24px; font-weight: 900; margin-bottom: 14px; }
+    .guarantee-img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      display: block;
+      margin: 0 auto 24px;
+      filter: drop-shadow(0 6px 18px rgba(39,196,94,.25));
+    }
+    .guarantee h3 { font-size: 26px; font-weight: 900; margin-bottom: 14px; }
     .guarantee p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
+    @media (min-width: 768px) {
+      .guarantee { padding: 52px 60px; }
+      .guarantee-img { max-width: 400px; }
+      .guarantee h3 { font-size: 32px; }
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -1587,7 +1601,7 @@
 <section>
   <div class="wrap">
     <div class="guarantee">
-      <img src="img/garantia.webp" alt="Garantía de Satisfacción" style="width:180px; margin:0 auto 20px; display:block;" />
+      <img src="img/garantia.webp" alt="Garantía de Satisfacción" class="guarantee-img" />
       <h3>Haz una receta.<br>Si no te gusta, te devolvemos todo.</h3>
       <p style="font-size:18px; font-weight:700; color:var(--green); margin-bottom:16px;">Esta es nuestra garantía. Y vale de verdad.</p>
       <p>Accede al material, elige cualquier receta, prepárala y pruébala. Si la ensalada no queda rica, si el aderezo no te impresiona, si por cualquier razón no quedas satisfecha, solo avísanos. Devolvemos el <strong>100% de tu dinero</strong>, sin preguntas, sin burocracia, sin complicaciones.</p>
