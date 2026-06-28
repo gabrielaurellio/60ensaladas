@@ -7,8 +7,11 @@
   <meta name="description" content="60 recetas de ensaladas en frasco con aderezos irresistibles. Prepara con anticipación, conserva hasta 7 días. Acceso inmediato con garantía de satisfacción." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="https://saladas.compraronline.digital/img/14-lcp.webp" />
+  <link rel="preconnect" href="https://saladas.compraronline.digital" crossorigin />
+  <link rel="dns-prefetch" href="https://saladas.compraronline.digital" />
+  <link rel="preload" as="image" fetchpriority="high" href="https://saladas.compraronline.digital/img/14-lcp.webp" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -172,6 +175,7 @@
       gap: 12px;
       width: max-content;
       margin-bottom: 12px;
+      will-change: transform;
     }
     .carousel-row:first-child { animation: scroll-left 22s linear infinite; }
     .carousel-row:last-child  { animation: scroll-right 22s linear infinite; }
@@ -860,6 +864,38 @@
     .sensory-photo + .sensory-photo { margin-top: 0; }
   }
   </style>
+
+  <!-- UTM tracking (async, non-blocking) -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+
+  <!-- Utmify Pixel (adiado 3.5s para não bloquear LCP) -->
+  <script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if (!window._utmLoaded) {
+        window._utmLoaded = true;
+        window.pixelId = "6a2a03e1600a4d01d922d9cd";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+      }
+    }, 3500);
+    ['mousedown','touchstart','keydown','scroll'].forEach(function(e){
+      document.addEventListener(e, function init(){
+        document.removeEventListener(e, init);
+        if (!window._utmLoaded) {
+          window._utmLoaded = true;
+          window.pixelId = "6a2a03e1600a4d01d922d9cd";
+          var a = document.createElement("script");
+          a.setAttribute("async", "");
+          a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+          document.head.appendChild(a);
+        }
+      });
+    });
+  });
+  </script>
 </head>
 <body>
 
@@ -881,6 +917,9 @@
     src="https://saladas.compraronline.digital/img/14-lcp.webp"
     alt="Ensalada en frasco apetitosa"
     class="hero-food-img"
+    width="720" height="900"
+    fetchpriority="high"
+    decoding="async"
     style="width:100%; display:block; margin:24px auto 0;"
   />
 
@@ -897,6 +936,8 @@
       src="img/produto.webp"
       alt="Ensaladas en Frasco: todo lo que vas a recibir"
       class="hero-img"
+      width="580" height="580"
+      loading="lazy" decoding="async"
       style="margin:0 auto 24px; border-radius:16px;"
     />
 
@@ -987,54 +1028,54 @@
   <!-- Carrossel de depoimentos -->
   <div class="carousel-outer" style="margin-top:0; padding:20px 0;">
     <div class="carousel-row">
-      <img src="img/dep-01.webp" alt="Testimonio" />
-      <img src="img/dep-02.webp" alt="Testimonio" />
-      <img src="img/dep-03.webp" alt="Testimonio" />
-      <img src="img/dep-05.webp" alt="Testimonio" />
-      <img src="img/dep-06.webp" alt="Testimonio" />
-      <img src="img/dep-07.webp" alt="Testimonio" />
-      <img src="img/dep-08.webp" alt="Testimonio" />
-      <img src="img/dep-09.webp" alt="Testimonio" />
-      <img src="img/dep-10.webp" alt="Testimonio" />
-      <img src="img/dep-11.webp" alt="Testimonio" />
-      <img src="img/dep-12.webp" alt="Testimonio" />
+      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
       <!-- duplicadas para loop infinito -->
-      <img src="img/dep-01.webp" alt="Testimonio" />
-      <img src="img/dep-02.webp" alt="Testimonio" />
-      <img src="img/dep-03.webp" alt="Testimonio" />
-      <img src="img/dep-05.webp" alt="Testimonio" />
-      <img src="img/dep-06.webp" alt="Testimonio" />
-      <img src="img/dep-07.webp" alt="Testimonio" />
-      <img src="img/dep-08.webp" alt="Testimonio" />
-      <img src="img/dep-09.webp" alt="Testimonio" />
-      <img src="img/dep-10.webp" alt="Testimonio" />
-      <img src="img/dep-11.webp" alt="Testimonio" />
-      <img src="img/dep-12.webp" alt="Testimonio" />
+      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
     </div>
     <div class="carousel-row">
-      <img src="img/dep-11.webp" alt="Testimonio" />
-      <img src="img/dep-12.webp" alt="Testimonio" />
-      <img src="img/dep-05.webp" alt="Testimonio" />
-      <img src="img/dep-06.webp" alt="Testimonio" />
-      <img src="img/dep-07.webp" alt="Testimonio" />
-      <img src="img/dep-08.webp" alt="Testimonio" />
-      <img src="img/dep-09.webp" alt="Testimonio" />
-      <img src="img/dep-10.webp" alt="Testimonio" />
-      <img src="img/dep-01.webp" alt="Testimonio" />
-      <img src="img/dep-02.webp" alt="Testimonio" />
-      <img src="img/dep-03.webp" alt="Testimonio" />
+      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
       <!-- duplicadas para loop infinito -->
-      <img src="img/dep-11.webp" alt="Testimonio" />
-      <img src="img/dep-12.webp" alt="Testimonio" />
-      <img src="img/dep-05.webp" alt="Testimonio" />
-      <img src="img/dep-06.webp" alt="Testimonio" />
-      <img src="img/dep-07.webp" alt="Testimonio" />
-      <img src="img/dep-08.webp" alt="Testimonio" />
-      <img src="img/dep-09.webp" alt="Testimonio" />
-      <img src="img/dep-10.webp" alt="Testimonio" />
-      <img src="img/dep-01.webp" alt="Testimonio" />
-      <img src="img/dep-02.webp" alt="Testimonio" />
-      <img src="img/dep-03.webp" alt="Testimonio" />
+      <img src="img/dep-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/dep-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
     </div>
   </div>
 
@@ -1109,7 +1150,7 @@
       <div class="module-card">
         <div class="module-card-bg">
           <div class="module-num">📗 Módulo 1 de 3</div>
-          <img src="img/modulo-1.webp" alt="60 Recetas de Ensaladas en Frasco" />
+          <img src="img/modulo-1.webp" alt="60 Recetas de Ensaladas en Frasco" width="340" height="340" loading="lazy" decoding="async" />
         </div>
         <div class="module-card-footer">
           <h3>60 Recetas de Ensaladas en Frasco</h3>
@@ -1125,7 +1166,7 @@
       <div class="module-card">
         <div class="module-card-bg">
           <div class="module-num">📘 Módulo 2 de 3</div>
-          <img src="img/modulo-2.webp" alt="El Secreto de las Capas" />
+          <img src="img/modulo-2.webp" alt="El Secreto de las Capas" width="340" height="340" loading="lazy" decoding="async" />
         </div>
         <div class="module-card-footer">
           <h3>El Secreto de las Capas: fresca por 7 días</h3>
@@ -1141,7 +1182,7 @@
       <div class="module-card">
         <div class="module-card-bg">
           <div class="module-num">📙 Módulo 3 de 3</div>
-          <img src="img/modulo-3.webp" alt="Aderezos Irresistibles" />
+          <img src="img/modulo-3.webp" alt="Aderezos Irresistibles" width="340" height="340" loading="lazy" decoding="async" />
         </div>
         <div class="module-card-footer">
           <h3>Aderezos Irresistibles Caseros</h3>
@@ -1165,7 +1206,7 @@
     <div class="bonus-card">
       <div class="bonus-card-bg">
         <span class="bonus-badge">🎁 Bono 1 · GRATIS</span>
-        <img src="img/bonus-1.webp" alt="20 Smoothies Detox" style="margin-top:16px;" />
+        <img src="img/bonus-1.webp" alt="20 Smoothies Detox" width="300" height="300" loading="lazy" decoding="async" style="margin-top:16px;" />
       </div>
       <div class="bonus-card-footer">
         <div>
@@ -1183,7 +1224,7 @@
     <div class="bonus-card">
       <div class="bonus-card-bg">
         <span class="bonus-badge">🎁 Bono 2 · GRATIS</span>
-        <img src="img/bonus-2.webp" alt="5 Shots Matutinos" style="margin-top:16px;" />
+        <img src="img/bonus-2.webp" alt="5 Shots Matutinos" width="300" height="300" loading="lazy" decoding="async" style="margin-top:16px;" />
       </div>
       <div class="bonus-card-footer">
         <div>
@@ -1201,7 +1242,7 @@
     <div class="bonus-card">
       <div class="bonus-card-bg">
         <span class="bonus-badge">🎁 Bono 3 · GRATIS</span>
-        <img src="img/bonus-3.webp" alt="15 Aguas Saborizadas" style="margin-top:16px;" />
+        <img src="img/bonus-3.webp" alt="15 Aguas Saborizadas" width="300" height="300" loading="lazy" decoding="async" style="margin-top:16px;" />
       </div>
       <div class="bonus-card-footer">
         <div>
@@ -1237,7 +1278,7 @@
     <div class="saladas-showcase">
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/6.webp" alt="Ensalada Refrescante" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/6.webp" alt="Ensalada Refrescante" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Refrescante + Aderezo Cítrico</h4>
           <div class="salada-feature-badges">
@@ -1248,7 +1289,7 @@
       </div>
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/7.webp" alt="Ensalada Caprese" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/7.webp" alt="Ensalada Caprese" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Caprese</h4>
           <div class="salada-feature-badges">
@@ -1259,7 +1300,7 @@
       </div>
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/9.webp" alt="Ensalada Caesar" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/9.webp" alt="Ensalada Caesar" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Caesar + Aderezo Original</h4>
           <div class="salada-feature-badges">
@@ -1270,7 +1311,7 @@
       </div>
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/14-box.webp" alt="Ensalada Big Mac" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/14-box.webp" alt="Ensalada Big Mac" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Big Mac + Aderezo Especial</h4>
           <div class="salada-feature-badges">
@@ -1281,7 +1322,7 @@
       </div>
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/10.webp" alt="Ensalada Mediterránea" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/10.webp" alt="Ensalada Mediterránea" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Mediterránea + Aderezo Agridulce</h4>
           <div class="salada-feature-badges">
@@ -1292,7 +1333,7 @@
       </div>
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/11.webp" alt="Ensalada Toscana" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/11.webp" alt="Ensalada Toscana" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Toscana + Aderezo Siciliano</h4>
           <div class="salada-feature-badges">
@@ -1303,7 +1344,7 @@
       </div>
 
       <div class="salada-feature-card">
-        <img src="https://saladas.compraronline.digital/img/design.webp" alt="Ensalada Rústica" loading="lazy" />
+        <img src="https://saladas.compraronline.digital/img/design.webp" alt="Ensalada Rústica" width="300" height="200" loading="lazy" decoding="async" />
         <div class="salada-feature-info">
           <h4>Ensalada Rústica + Mostaza y Miel</h4>
           <div class="salada-feature-badges">
@@ -1326,9 +1367,9 @@
     <h2 class="section-title">Frescura de restaurante.<br><span>En tu casa. En 30 minutos.</span></h2>
   </div>
   <div class="sensory-row">
-    <img class="sensory-photo" src="https://saladas.compraronline.digital/img/3.webp" alt="Ensalada fresca" loading="lazy" />
-    <img class="sensory-photo" src="https://saladas.compraronline.digital/img/1.webp" alt="Ensalada colorida" loading="lazy" />
-    <img class="sensory-photo" src="https://saladas.compraronline.digital/img/4.webp" alt="Ensalada gourmet" loading="lazy" />
+    <img class="sensory-photo" src="https://saladas.compraronline.digital/img/3.webp" alt="Ensalada fresca" width="200" height="200" loading="lazy" decoding="async" />
+    <img class="sensory-photo" src="https://saladas.compraronline.digital/img/1.webp" alt="Ensalada colorida" width="200" height="200" loading="lazy" decoding="async" />
+    <img class="sensory-photo" src="https://saladas.compraronline.digital/img/4.webp" alt="Ensalada gourmet" width="200" height="200" loading="lazy" decoding="async" />
   </div>
   <div style="padding:32px 20px 52px; text-align:center;">
     <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta" style="max-width:460px; margin:0 auto;" target="_blank">
@@ -1420,7 +1461,7 @@
     </div>
 
     <div class="price-box">
-      <img src="img/produto.webp" alt="Ensaladas en Frasco - Todo lo que vas a recibir" class="product-img" />
+      <img src="img/produto.webp" alt="Ensaladas en Frasco - Todo lo que vas a recibir" class="product-img" width="400" height="400" loading="lazy" decoding="async" />
 
       <span class="offer-expires">⏳ OFERTA POR TIEMPO LIMITADO</span>
 
@@ -1488,7 +1529,7 @@
 
     <div class="authority">
       <div class="authority-header">
-        <img src="img/priscila.webp" alt="Priscila Prates" class="authority-photo" />
+        <img src="img/priscila.webp" alt="Priscila Prates" class="authority-photo" width="200" height="200" loading="lazy" decoding="async" />
         <div>
           <div class="authority-name">Priscila Prates</div>
           <div class="authority-title">Nutricionista</div>
@@ -1531,58 +1572,58 @@
 
   <div class="carousel-outer" style="margin-top:0; padding:20px 0;">
     <div class="carousel-row">
-      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
       <!-- duplicadas para loop infinito -->
-      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
     </div>
     <div class="carousel-row">
-      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
       <!-- duplicadas para loop infinito -->
-      <img src="img/test-07.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-08.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-09.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-10.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-11.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-12.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-01.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-02.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-03.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-04.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-05.webp" alt="Testimonio" loading="lazy" />
-      <img src="img/test-06.webp" alt="Testimonio" loading="lazy" />
+      <img src="img/test-07.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-08.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-09.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-10.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-11.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-12.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-01.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-02.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-03.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-04.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-05.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
+      <img src="img/test-06.webp" alt="Testimonio" width="210" height="280" loading="lazy" decoding="async" />
     </div>
   </div>
 
@@ -1601,7 +1642,7 @@
 <section>
   <div class="wrap">
     <div class="guarantee">
-      <img src="img/garantia.webp" alt="Garantía de Satisfacción" class="guarantee-img" />
+      <img src="img/garantia.webp" alt="Garantía de Satisfacción" class="guarantee-img" width="400" height="400" loading="lazy" decoding="async" />
       <h3>Haz una receta.<br>Si no te gusta, te devolvemos todo.</h3>
       <p style="font-size:18px; font-weight:700; color:var(--green); margin-bottom:16px;">Esta es nuestra garantía. Y vale de verdad.</p>
       <p>Accede al material, elige cualquier receta, prepárala y pruébala. Si la ensalada no queda rica, si el aderezo no te impresiona, si por cualquier razón no quedas satisfecha, solo avísanos. Devolvemos el <strong>100% de tu dinero</strong>, sin preguntas, sin burocracia, sin complicaciones.</p>
