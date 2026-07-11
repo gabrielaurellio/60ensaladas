@@ -7,9 +7,7 @@
   <meta name="description" content="60 recetas de ensaladas en frasco con aderezos irresistibles. Prepara con anticipación, conserva hasta 7 días. Acceso inmediato con garantía de satisfacción." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://saladas.compraronline.digital" crossorigin />
-  <link rel="dns-prefetch" href="https://saladas.compraronline.digital" />
-  <link rel="preload" as="image" fetchpriority="high" href="https://saladas.compraronline.digital/img/14-lcp.webp" />
+  <link rel="preload" as="image" fetchpriority="high" href="img/14-lcp.webp" />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 
@@ -838,7 +836,7 @@
   @media (min-width: 768px) {
     /* Hero food photo: centrada e com largura máxima */
     .hero-food-img {
-      max-width: 720px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
       border-radius: 20px;
@@ -905,19 +903,24 @@
   <div class="wrap" style="text-align:center;">
     <div class="hero-tag">Para quienes quieren comer saludable pero no tienen tiempo</div>
     <h1>Copia mi método y <span>resuelve todos tus almuerzos de la semana en 30 minutos</span> a partir de hoy.</h1>
-    <h2>Las <strong>60 recetas de ensaladas en frasco</strong> que se conservan frescas por 7 días en el refrigerador. Prepara el domingo, come saludable toda la semana, sin preocuparte por qué vas a comer mañana.</h2>
   </div>
 
-  <!-- Food photo after headline — promise → visual desire → buy -->
+  <!-- Food photo between headline and subheadline -->
   <img
-    src="https://saladas.compraronline.digital/img/14-lcp.webp"
+    src="img/14-lcp.webp"
+    srcset="img/14-lcp-sm.webp 400w, img/14-lcp.webp 800w"
+    sizes="(max-width:480px) 400px, 800px"
     alt="Ensalada en frasco apetitosa"
     class="hero-food-img"
-    width="720" height="900"
+    width="800" height="436"
     fetchpriority="high"
     decoding="async"
     style="width:100%; display:block; margin:24px auto 0;"
   />
+
+  <div class="wrap" style="text-align:center; padding-top:16px;">
+    <h2>Las <strong>60 recetas de ensaladas en frasco</strong> que se conservan frescas por 7 días en el refrigerador. Prepara el domingo, come saludable toda la semana, sin preocuparte por qué vas a comer mañana.</h2>
+  </div>
 
   <div class="wrap" style="text-align:center; padding-top:28px;">
     <!-- Bullet pills -->
