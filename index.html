@@ -871,6 +871,183 @@
     }
     .sensory-photo + .sensory-photo { margin-top: 0; }
   }
+
+  /* ════════════════════════════════
+     BONUS CARDS REDESIGN
+  ════════════════════════════════ */
+  .bcn-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 520px;
+    margin: 0 auto 44px;
+  }
+
+  .bcn-card {
+    background: linear-gradient(160deg, #0f2016 0%, #090e0b 100%);
+    border: 1px solid rgba(34,197,94,.18);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,.45), 0 0 0 1px rgba(34,197,94,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .bcn-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,.55), 0 0 28px rgba(34,197,94,.1);
+  }
+
+  .bcn-img-area {
+    position: relative;
+    background: linear-gradient(180deg, #0e2318 0%, #060d08 100%);
+    padding: 36px 24px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bcn-img-area img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    filter: drop-shadow(0 10px 28px rgba(0,0,0,.6));
+  }
+
+  .bcn-badge {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 5px 18px;
+    border-radius: 100px;
+    white-space: nowrap;
+    letter-spacing: .5px;
+    box-shadow: 0 4px 14px rgba(220,38,38,.45);
+    z-index: 2;
+  }
+  .bcn-badge-gold {
+    background: linear-gradient(135deg, #92400e, #f59e0b) !important;
+    box-shadow: 0 4px 14px rgba(234,179,8,.4) !important;
+    color: #000 !important;
+  }
+
+  .bcn-text {
+    padding: 20px 22px 24px;
+    border-top: 1px solid rgba(255,255,255,.05);
+  }
+  .bcn-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .bcn-subtitle {
+    font-size: 12.5px;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .bcn-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .bcn-bullet {
+    font-size: 12.5px;
+    color: rgba(255,255,255,.55);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+  .bcn-bullet::before {
+    content: '✓';
+    color: #22C55E;
+    font-weight: 900;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .bcn-price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    padding: 13px 18px;
+  }
+  .bcn-price-old {
+    font-size: 14px;
+    color: rgba(255,255,255,.25);
+    text-decoration: line-through;
+    font-weight: 700;
+  }
+  .bcn-divider {
+    font-size: 14px;
+    color: rgba(255,255,255,.2);
+  }
+  .bcn-price-free {
+    font-size: 16px;
+    font-weight: 900;
+    color: #22C55E;
+    letter-spacing: .5px;
+    margin-left: auto;
+  }
+
+  .bcn-card-super {
+    border: 2px solid rgba(234,179,8,.5) !important;
+    background: linear-gradient(160deg, #1a1505 0%, #0d0d07 100%) !important;
+    box-shadow: 0 0 40px rgba(234,179,8,.15), 0 8px 32px rgba(0,0,0,.5) !important;
+    position: relative;
+    padding-top: 14px;
+  }
+  .bcn-super-top-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #92400e, #eab308);
+    color: #000;
+    font-size: 11.5px;
+    font-weight: 900;
+    padding: 6px 22px;
+    border-radius: 100px;
+    white-space: nowrap;
+    letter-spacing: .8px;
+    box-shadow: 0 4px 18px rgba(234,179,8,.45);
+    z-index: 3;
+  }
+  .bcn-img-super {
+    background: linear-gradient(180deg, #1a1204 0%, #0d0d07 100%) !important;
+  }
+  .bcn-price-super {
+    background: rgba(234,179,8,.07) !important;
+    border: 1px solid rgba(234,179,8,.25) !important;
+  }
+  .bcn-free-gold {
+    color: #eab308 !important;
+  }
+
+  /* Total box */
+  .bonus-total-box {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 44px;
+    background: linear-gradient(135deg, rgba(34,197,94,.08), rgba(34,197,94,.04));
+    border: 1.5px solid rgba(34,197,94,.28);
+    border-radius: 20px;
+    padding: 30px 32px;
+  }
+  .btb-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(34,197,94,.6); margin-bottom: 10px; }
+  .btb-struck { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; color: rgba(255,255,255,.3); text-decoration: line-through; margin-bottom: 6px; }
+  .btb-free { font-size: clamp(16px, 3vw, 20px); font-weight: 900; color: #22C55E; }
   </style>
 
   <!-- Meta Pixel (adiado para não bloquear LCP) -->
@@ -1222,58 +1399,100 @@
       <p>También vas a recibir <strong>3 bonos exclusivos</strong> totalmente gratis:</p>
     </div>
 
-    <!-- Bônus 1 -->
-    <div class="bonus-card">
-      <div class="bonus-card-bg">
-        <span class="bonus-badge">🎁 Bono 1 · GRATIS</span>
-        <img src="img/bonus-1.webp" alt="20 Smoothies Detox" width="600" height="400" loading="lazy" decoding="async" style="margin-top:16px;" />
-      </div>
-      <div class="bonus-card-footer">
-        <div>
-          <h4>20 Smoothies Detox</h4>
-          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Complementa tu alimentación saludable</p>
+    <div class="bcn-grid">
+
+      <!-- BONO 1 -->
+      <div class="bcn-card fi">
+        <div class="bcn-img-area">
+          <span class="bcn-badge">🎁 BONO #1 — GRATIS</span>
+          <img src="img/bonus-1.webp" alt="20 Smoothies Detox" loading="lazy" decoding="async">
         </div>
-        <div style="text-align:right;">
-          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
-          <span class="free-tag">GRATIS</span>
+        <div class="bcn-text">
+          <p class="bcn-title">20 Smoothies Detox</p>
+          <p class="bcn-subtitle">Para empezar la mañana con energía real</p>
+          <div class="bcn-bullets">
+            <span class="bcn-bullet">Listos en 3 minutos — sin blender especial</span>
+            <span class="bcn-bullet">Complementan perfectamente tu rutina de ensaladas</span>
+          </div>
+          <div class="bcn-price">
+            <span class="bcn-price-old">DE $17 USD</span>
+            <span class="bcn-divider">→</span>
+            <span class="bcn-price-free">GRATIS HOY</span>
+          </div>
         </div>
       </div>
+
+      <!-- BONO 2 -->
+      <div class="bcn-card fi">
+        <div class="bcn-img-area">
+          <span class="bcn-badge">🎁 BONO #2 — GRATIS</span>
+          <img src="img/bonus-2.webp" alt="5 Shots Matinales" loading="lazy" decoding="async">
+        </div>
+        <div class="bcn-text">
+          <p class="bcn-title">5 Shots Matinales</p>
+          <p class="bcn-subtitle">El ritual que cambia tu energía desde el primer día</p>
+          <div class="bcn-bullets">
+            <span class="bcn-bullet">Lo que los spas cobran $8 por vaso — en casa por centavos</span>
+            <span class="bcn-bullet">Jengibre, cúrcuma, limón y más — efecto inmediato</span>
+          </div>
+          <div class="bcn-price">
+            <span class="bcn-price-old">DE $9 USD</span>
+            <span class="bcn-divider">→</span>
+            <span class="bcn-price-free">GRATIS HOY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BONO 3 -->
+      <div class="bcn-card fi">
+        <div class="bcn-img-area">
+          <span class="bcn-badge">🎁 BONO #3 — GRATIS</span>
+          <img src="img/bonus-3.webp" alt="15 Aguas Saborizadas" loading="lazy" decoding="async">
+        </div>
+        <div class="bcn-text">
+          <p class="bcn-title">15 Aguas Saborizadas</p>
+          <p class="bcn-subtitle">Hidratación saludable para toda la semana</p>
+          <div class="bcn-bullets">
+            <span class="bcn-bullet">Sin azúcar · sin conservantes · deliciosas</span>
+            <span class="bcn-bullet">Tu familia las va a tomar sin que les pidas</span>
+          </div>
+          <div class="bcn-price">
+            <span class="bcn-price-old">DE $9 USD</span>
+            <span class="bcn-divider">→</span>
+            <span class="bcn-price-free">GRATIS HOY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUPER BONO -->
+      <div class="bcn-card bcn-card-super fi">
+        <div class="bcn-super-top-badge">⭐ SUPER BONO EXCLUSIVO</div>
+        <div class="bcn-img-area bcn-img-super">
+          <span class="bcn-badge bcn-badge-gold">🎁 SUPER BONO — GRATIS</span>
+          <img src="img/super-bonus.webp" alt="El Protocolo Domingo + Plan 4 Semanas" loading="lazy" decoding="async">
+        </div>
+        <div class="bcn-text">
+          <p class="bcn-title">El Protocolo Domingo™</p>
+          <p class="bcn-subtitle">+ Plan de Alimentación de 4 Semanas</p>
+          <div class="bcn-bullets">
+            <span class="bcn-bullet">Prepara 7 días de ensaladas en 90 minutos cada domingo</span>
+            <span class="bcn-bullet">Plan completo: qué comer cada día durante 4 semanas</span>
+            <span class="bcn-bullet">Lo que una nutricionista cobra $47 — incluido gratis</span>
+          </div>
+          <div class="bcn-price bcn-price-super">
+            <span class="bcn-price-old">DE $47 USD</span>
+            <span class="bcn-divider">→</span>
+            <span class="bcn-price-free bcn-free-gold">GRATIS HOY</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Bônus 2 -->
-    <div class="bonus-card">
-      <div class="bonus-card-bg">
-        <span class="bonus-badge">🎁 Bono 2 · GRATIS</span>
-        <img src="img/bonus-2.webp" alt="5 Shots Matutinos" width="600" height="400" loading="lazy" decoding="async" style="margin-top:16px;" />
-      </div>
-      <div class="bonus-card-footer">
-        <div>
-          <h4>5 Shots Matutinos</h4>
-          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Aceleran el metabolismo en 1 minuto</p>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
-          <span class="free-tag">GRATIS</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bônus 3 -->
-    <div class="bonus-card">
-      <div class="bonus-card-bg">
-        <span class="bonus-badge">🎁 Bono 3 · GRATIS</span>
-        <img src="img/bonus-3.webp" alt="15 Aguas Saborizadas" width="600" height="400" loading="lazy" decoding="async" style="margin-top:16px;" />
-      </div>
-      <div class="bonus-card-footer">
-        <div>
-          <h4>15 Aguas Saborizadas</h4>
-          <p style="font-size:12px; color:rgba(255,255,255,.5); margin-top:3px;">Hidratación rica con frutas naturales</p>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-size:11px; color:rgba(255,255,255,.4); text-decoration:line-through;">$9.90</div>
-          <span class="free-tag">GRATIS</span>
-        </div>
-      </div>
+    <div class="bonus-total-box fi">
+      <p class="btb-label">Valor total de los 4 bonos</p>
+      <p class="btb-struck">$82 USD</p>
+      <p class="btb-free">Incluidos GRATIS con tu compra de $9,90 🎁</p>
     </div>
 
     <!-- CTA após todos os entregáveis -->
