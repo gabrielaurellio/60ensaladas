@@ -1778,6 +1778,85 @@
     .btb-struck { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; color: rgba(234,179,8,.5); text-decoration: line-through; margin-bottom: 6px; }
     .btb-free { font-size: clamp(18px, 3vw, 24px); font-weight: 900; color: var(--verde-v); }
 
+    /* ── Hero product desc ── */
+    .hero-product-desc {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: rgba(255,255,255,.65);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    /* ── Bonus image wrapper ── */
+    .bonus-img-wrap {
+      position: relative;
+      flex-shrink: 0;
+      width: 160px;
+    }
+    @media (max-width: 600px) { .bonus-img-wrap { width: 100%; } }
+
+    .bonus-badge {
+      position: absolute;
+      top: -10px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, #B45309, #EAB308);
+      color: #000;
+      font-size: 11px; font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+      z-index: 2;
+      letter-spacing: .5px;
+    }
+    .bonus-badge-gold {
+      background: linear-gradient(135deg, #92400E, #F59E0B, #EAB308);
+      font-size: 12px;
+      padding: 5px 16px;
+    }
+
+    /* ── Price anchor ── */
+    .bonus-price-anchor {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .bpa-old {
+      font-size: 14px;
+      color: rgba(255,255,255,.3);
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+    .bpa-arrow { font-size: 14px; color: rgba(255,255,255,.3); }
+    .bpa-free  { font-size: 15px; font-weight: 900; color: #EAB308; }
+
+    /* ── Super Bonus card ── */
+    .bonus-card-super {
+      border: 2px solid rgba(234,179,8,.6) !important;
+      background: linear-gradient(135deg, rgba(234,179,8,.07), rgba(0,0,0,0)) !important;
+      box-shadow: 0 0 40px rgba(234,179,8,.2), 0 8px 32px rgba(0,0,0,.4) !important;
+      position: relative;
+      padding-top: 28px !important;
+    }
+    .super-badge-top {
+      position: absolute;
+      top: -16px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, #92400E, #EAB308);
+      color: #000;
+      font-size: 12px; font-weight: 900;
+      padding: 6px 20px;
+      border-radius: 100px;
+      white-space: nowrap;
+      letter-spacing: .8px;
+      box-shadow: 0 4px 16px rgba(234,179,8,.4);
+    }
+    .bonus-tag-gold {
+      background: rgba(234,179,8,.15) !important;
+      border: 1px solid rgba(234,179,8,.4) !important;
+      color: #EAB308 !important;
+    }
+
   </style>
 
   <!-- UTM tracking (async, non-blocking) -->
@@ -1854,8 +1933,15 @@
       y hoy lo está liberando para cualquier mujer por solo <strong>$9,90</strong>.
     </p>
 
+    <p class="hero-product-desc fi">
+      Las 60 recetas de ensaladas en frasco que se conservan frescas por 7 días en el refrigerador.
+      Prepara el domingo, come saludable toda la semana, sin preocuparte por qué vas a comer mañana.
+    </p>
+
     <div class="vturb-wrap fi">
-      <vturb-smartplayer id="vid-6a2a12bc315536fd533dbdaf" style="display:block;margin:0 auto;width:100%;max-width:720px;"></vturb-smartplayer>
+      <vturb-smartplayer id="vid-6a2a12bc315536fd533dbdaf" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
+        <div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div>
+      </vturb-smartplayer>
       <script type="text/javascript">
         var s=document.createElement("script");
         s.src="https://scripts.converteai.net/c1941ea7-b030-4180-b1f0-5a9a49fb1f05/players/6a2a12bc315536fd533dbdaf/v4/player.js";
@@ -2382,60 +2468,73 @@
 
       <!-- BONO 1 -->
       <div class="bonus-card-v2 fi">
-        <div class="ebook-cover ec-green">
-          <span class="ebook-label">BONO #1</span>
-          <span class="ebook-icon">🥤</span>
-          <span class="ebook-title">Smoothies Detox</span>
-          <span class="ebook-sub">20 recetas</span>
-          <span class="ebook-watermark">🍃</span>
+        <div class="bonus-img-wrap">
+          <span class="bonus-badge">🎁 BONO #1</span>
+          <img src="bonus-1.webp" alt="20 Smoothies Detox" style="width:100%;border-radius:14px;display:block;">
         </div>
         <div class="bonus-text-v2">
           <div class="bonus-tag" style="margin-bottom:12px;">⚡ BONO #1 HOY — GRATIS</div>
           <p class="bonus-name">20 Smoothies Detox para Empezar la Mañana</p>
           <p class="bonus-desc">20 recetas de batidos naturales que limpian, energizan y complementan tu rutina de ensaladas. Listos en 3 minutos. Sin complicaciones.</p>
-          <div class="bonus-val-row">
-            <span class="bonus-old-price">Valor: $17 USD</span>
-            <span class="bonus-free-tag">✅ INCLUIDO GRATIS</span>
+          <div class="bonus-price-anchor">
+            <span class="bpa-old">DE $17 USD</span>
+            <span class="bpa-arrow">→</span>
+            <span class="bpa-free">$0 — GRATIS</span>
           </div>
         </div>
       </div>
 
       <!-- BONO 2 -->
       <div class="bonus-card-v2 fi">
-        <div class="ebook-cover ec-amber">
-          <span class="ebook-label">BONO #2</span>
-          <span class="ebook-icon">⚡</span>
-          <span class="ebook-title">Shots Matinales</span>
-          <span class="ebook-sub">5 recetas</span>
-          <span class="ebook-watermark">🌿</span>
+        <div class="bonus-img-wrap">
+          <span class="bonus-badge">🎁 BONO #2</span>
+          <img src="bonus-2.webp" alt="5 Shots Matinales" style="width:100%;border-radius:14px;display:block;">
         </div>
         <div class="bonus-text-v2">
           <div class="bonus-tag" style="margin-bottom:12px;">⚡ BONO #2 HOY — GRATIS</div>
           <p class="bonus-name">5 Shots Matinales que Cambian tu Energía</p>
           <p class="bonus-desc">Lo que los spas cobran $8 por vaso — preparado en casa por centavos. Jengibre, cúrcuma, limón y más. El que la Nutri toma cada mañana.</p>
-          <div class="bonus-val-row">
-            <span class="bonus-old-price">Valor: $9 USD</span>
-            <span class="bonus-free-tag">✅ INCLUIDO GRATIS</span>
+          <div class="bonus-price-anchor">
+            <span class="bpa-old">DE $9 USD</span>
+            <span class="bpa-arrow">→</span>
+            <span class="bpa-free">$0 — GRATIS</span>
           </div>
         </div>
       </div>
 
       <!-- BONO 3 -->
       <div class="bonus-card-v2 fi">
-        <div class="ebook-cover ec-blue">
-          <span class="ebook-label">BONO #3</span>
-          <span class="ebook-icon">💧</span>
-          <span class="ebook-title">Aguas Saborizadas</span>
-          <span class="ebook-sub">15 recetas</span>
-          <span class="ebook-watermark">🫙</span>
+        <div class="bonus-img-wrap">
+          <span class="bonus-badge">🎁 BONO #3</span>
+          <img src="bonus-3.webp" alt="15 Aguas Saborizadas" style="width:100%;border-radius:14px;display:block;">
         </div>
         <div class="bonus-text-v2">
           <div class="bonus-tag" style="margin-bottom:12px;">⚡ BONO #3 HOY — GRATIS</div>
           <p class="bonus-name">15 Aguas Saborizadas para Toda la Semana</p>
           <p class="bonus-desc">Deja de gastar en jugos y sodas. 15 combinaciones de agua saborizada natural, deliciosas y sin azúcar. Tu familia las va a tomar sin que les pidas.</p>
-          <div class="bonus-val-row">
-            <span class="bonus-old-price">Valor: $9 USD</span>
-            <span class="bonus-free-tag">✅ INCLUIDO GRATIS</span>
+          <div class="bonus-price-anchor">
+            <span class="bpa-old">DE $9 USD</span>
+            <span class="bpa-arrow">→</span>
+            <span class="bpa-free">$0 — GRATIS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUPER BONO -->
+      <div class="bonus-card-v2 bonus-card-super fi">
+        <div class="super-badge-top">⭐ SUPER BONO EXCLUSIVO</div>
+        <div class="bonus-img-wrap">
+          <span class="bonus-badge bonus-badge-gold">🎁 SUPER BONO</span>
+          <img src="super-bonus.webp" alt="El Protocolo Domingo + Plan 4 Semanas" style="width:100%;border-radius:14px;display:block;">
+        </div>
+        <div class="bonus-text-v2">
+          <div class="bonus-tag bonus-tag-gold" style="margin-bottom:12px;">⭐ SUPER BONO EXCLUSIVO — GRATIS</div>
+          <p class="bonus-name">El Protocolo Domingo™ + Plan de 4 Semanas</p>
+          <p class="bonus-desc">El sistema completo: un protocolo paso a paso para preparar 7 días de ensaladas en 90 minutos cada domingo, más el plan de alimentación de 4 semanas que te dice exactamente qué comer cada día. Lo que una nutricionista cobra $47 — incluido gratis hoy.</p>
+          <div class="bonus-price-anchor">
+            <span class="bpa-old">DE $47 USD</span>
+            <span class="bpa-arrow">→</span>
+            <span class="bpa-free">$0 — GRATIS</span>
           </div>
         </div>
       </div>
@@ -2443,8 +2542,8 @@
     </div>
 
     <div class="bonus-total-box fi">
-      <p class="btb-label">Valor total de los 3 bonos</p>
-      <p class="btb-struck">$35 USD</p>
+      <p class="btb-label">Valor total de los 4 bonos</p>
+      <p class="btb-struck">$82 USD</p>
       <p class="btb-free">Incluidos GRATIS con tu compra de $9,90 🎁</p>
     </div>
 
