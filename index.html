@@ -38,6 +38,7 @@
       --white: #ffffff;
       --border: #e0e0e0;
       --max: 620px;
+      --verde: #22a650;
     }
 
     html, body {
@@ -1060,6 +1061,156 @@
   .btb-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(34,197,94,.6); margin-bottom: 10px; }
   .btb-struck { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; color: rgba(255,255,255,.3); text-decoration: line-through; margin-bottom: 6px; }
   .btb-free { font-size: clamp(16px, 3vw, 20px); font-weight: 900; color: #22C55E; }
+
+/* ════════════════════════════════
+   ITENS "LO QUE RECIBES"
+════════════════════════════════ */
+.sec-pre {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+.sec-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.sec-header h2 {
+  font-size: clamp(22px, 6vw, 30px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.sec-header p {
+  font-size: 15px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.itens-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 520px;
+  margin: 0 auto 44px;
+}
+
+.item-card {
+  background: linear-gradient(160deg, #0f2016 0%, #090e0b 100%);
+  border: 1px solid rgba(34,197,94,.18);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,.45);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.55), 0 0 28px rgba(34,197,94,.1);
+}
+
+.item-img-area {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 65%, rgba(34,197,94,.13) 0%, #080f0a 65%);
+  padding: 36px 20px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-img-area img {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,.6));
+}
+
+.item-badge {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #14532d, #16a34a);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 5px 18px;
+  border-radius: 100px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 14px rgba(22,163,74,.4);
+  z-index: 2;
+}
+
+.item-text {
+  padding: 20px 22px 24px;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.item-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.item-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.item-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+.item-feat {
+  font-size: 12.5px;
+  color: rgba(255,255,255,.55);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+.item-feat::before {
+  content: '';
+  display: none;
+}
+
+.item-valor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 10px;
+  padding: 11px 16px;
+  flex-wrap: wrap;
+}
+.item-valor-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.3);
+  font-weight: 600;
+}
+.item-valor-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: rgba(255,255,255,.25);
+  text-decoration: line-through;
+}
+.item-valor-inc {
+  font-size: 14px;
+  font-weight: 900;
+  color: #22C55E;
+  margin-left: auto;
+}
+
   </style>
 
   <!-- Meta Pixel (adiado para não bloquear LCP) -->
@@ -1347,63 +1498,83 @@
 <div class="divider"></div>
 
 <!-- ════ WHAT YOU'LL RECEIVE ════ -->
-<section style="background:#f8faf8; padding-top:52px; padding-bottom:52px;">
+<section style="background:#060d08; padding-top:52px; padding-bottom:52px;">
   <div class="wrap">
-    <p class="section-label">Lo que vas a recibir</p>
-    <h2 class="section-title">Mira <em>todo</em> lo que viene en las <span>Ensaladas en Frasco</span></h2>
-    <p style="text-align:center; font-size:16px; color:var(--text-secondary); margin:-12px 0 32px;">Cada módulo fue creado para eliminar un problema específico de tu rutina alimentaria</p>
+    <div class="sec-header fi">
+      <span class="sec-pre">✦ Tu compra incluye</span>
+      <h2>Todo lo que recibes<br>cuando accedes hoy</h2>
+      <p>Tres materiales diseñados para eliminar cada obstáculo que te impide comer saludable.</p>
+    </div>
 
-    <div class="deliverables-grid">
+    <div class="itens-grid">
 
-      <!-- Módulo 1 -->
-      <div class="module-card">
-        <div class="module-card-bg">
-          <div class="module-num">📗 Módulo 1 de 3</div>
-          <img src="img/modulo-1.webp" alt="60 Recetas de Ensaladas en Frasco" width="340" height="340" loading="lazy" decoding="async" />
+      <!-- ITEM 1 -->
+      <div class="item-card fi">
+        <div class="item-img-area">
+          <span class="item-badge">✦ LAS RECETAS</span>
+          <img src="item-1.webp" alt="60 Recetas de Ensaladas en Frasco" width="640" height="357" loading="lazy" decoding="async">
         </div>
-        <div class="module-card-footer">
-          <h3>60 Recetas de Ensaladas en Frasco</h3>
-          <p>60 recetas completas y variadas: desde simples hasta sofisticadas. Nunca más te faltará inspiración ni repetirás la misma ensalada aburrida.</p>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
-            <span class="val-badge">✅ Valor: $19.90</span>
-            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
+        <div class="item-text">
+          <p class="item-title">60 Recetas de Ensaladas en Frasco</p>
+          <p class="item-desc">60 recetas completas y variadas con aderezos incluidos. Desde simples hasta sofisticadas — nunca más repetirás la misma ensalada aburrida.</p>
+          <div class="item-feats">
+            <span class="item-feat">✓ Fotos del paso a paso</span>
+            <span class="item-feat">✓ Información nutricional completa</span>
+            <span class="item-feat">✓ Un aderezo exclusivo por receta</span>
+          </div>
+          <div class="item-valor">
+            <span class="item-valor-label">Valor:</span>
+            <span class="item-valor-price">$19.90 USD</span>
+            <span class="item-valor-inc">✅ Incluido</span>
           </div>
         </div>
       </div>
 
-      <!-- Módulo 2 -->
-      <div class="module-card">
-        <div class="module-card-bg">
-          <div class="module-num">📘 Módulo 2 de 3</div>
-          <img src="img/modulo-2.webp" alt="El Secreto de las Capas" width="340" height="340" loading="lazy" decoding="async" />
+      <!-- ITEM 2 -->
+      <div class="item-card fi">
+        <div class="item-img-area">
+          <span class="item-badge">✦ EL MÉTODO</span>
+          <img src="item-2.webp" alt="El Secreto de las Capas" width="640" height="357" loading="lazy" decoding="async">
         </div>
-        <div class="module-card-footer">
-          <h3>El Secreto de las Capas: fresca por 7 días</h3>
-          <p>El método exacto de armado que garantiza ensalada fresca, crocante y rica por hasta 7 días en el refrigerador. Cero desperdicio.</p>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
-            <span class="val-badge">✅ Valor: $14.90</span>
-            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
+        <div class="item-text">
+          <p class="item-title">El Secreto de las Capas™</p>
+          <p class="item-desc">El método exacto de armado que mantiene tu ensalada fresca, crocante y deliciosa hasta 7 días en el refrigerador. Cero desperdicio.</p>
+          <div class="item-feats">
+            <span class="item-feat">✓ 7 días fresca garantizado</span>
+            <span class="item-feat">✓ Diagrama visual paso a paso</span>
+            <span class="item-feat">✓ El secreto que los restaurantes usan</span>
+          </div>
+          <div class="item-valor">
+            <span class="item-valor-label">Valor:</span>
+            <span class="item-valor-price">$14.90 USD</span>
+            <span class="item-valor-inc">✅ Incluido</span>
           </div>
         </div>
       </div>
 
-      <!-- Módulo 3 -->
-      <div class="module-card">
-        <div class="module-card-bg">
-          <div class="module-num">📙 Módulo 3 de 3</div>
-          <img src="img/modulo-3.webp" alt="Aderezos Irresistibles" width="340" height="340" loading="lazy" decoding="async" />
+      <!-- ITEM 3 -->
+      <div class="item-card fi">
+        <div class="item-img-area">
+          <span class="item-badge">✦ LOS ADEREZOS</span>
+          <img src="item-3.webp" alt="Aderezos Irresistibles Caseros" width="640" height="357" loading="lazy" decoding="async">
         </div>
-        <div class="module-card-footer">
-          <h3>Aderezos Irresistibles Caseros</h3>
-          <p>Cada receta incluye su aderezo exclusivo, casero, fácil e infinitamente más rico que los industriales. La ensalada que parece de restaurante.</p>
-          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
-            <span class="val-badge">✅ Valor: $14.90</span>
-            <span style="font-size:12px; color:rgba(255,255,255,.5);">⏱ Acceso inmediato</span>
+        <div class="item-text">
+          <p class="item-title">Aderezos Irresistibles Caseros</p>
+          <p class="item-desc">Cada receta incluye su aderezo exclusivo. Casero, fácil e infinitamente más rico que los industriales. La ensalada que parece de restaurante.</p>
+          <div class="item-feats">
+            <span class="item-feat">✓ Un aderezo diferente por receta</span>
+            <span class="item-feat">✓ Sin conservantes ni ingredientes raros</span>
+            <span class="item-feat">✓ Listos en menos de 2 minutos</span>
+          </div>
+          <div class="item-valor">
+            <span class="item-valor-label">Valor:</span>
+            <span class="item-valor-price">$14.90 USD</span>
+            <span class="item-valor-inc">✅ Incluido</span>
           </div>
         </div>
       </div>
 
-    </div><!-- /deliverables-grid -->
+    </div><!-- /itens-grid -->
 
     <!-- E TEM MAIS -->
     <div class="etemais" style="margin-top:52px;">
