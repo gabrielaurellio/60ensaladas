@@ -442,16 +442,24 @@
     .price-box {
       background: #0f5c2e;
       border-radius: 20px;
-      padding: 40px 28px;
+      padding: 0;
+      overflow: hidden;
       text-align: center;
       margin-top: 32px;
     }
+    .product-img-area {
+      background: #ffffff;
+      padding: 24px 16px 0;
+    }
     .price-box img.product-img {
-      max-width: 320px;
+      max-width: 100%;
       width: 100%;
       display: block;
-      margin: 0 auto 28px;
-      border-radius: 12px;
+      margin: 0 auto;
+      border-radius: 0;
+    }
+    .price-box-content {
+      padding: 28px 28px 40px;
     }
     .price-box .old-price {
       font-size: 18px;
@@ -1888,20 +1896,23 @@
     </div>
 
     <div class="price-box">
-      <img src="img/produto.webp" alt="Ensaladas en Frasco - Todo lo que vas a recibir" class="product-img" width="800" height="446" loading="lazy" decoding="async" />
+      <div class="product-img-area">
+        <img src="img/produto.webp" alt="Ensaladas en Frasco - Todo lo que vas a recibir" class="product-img" width="800" height="446" loading="lazy" decoding="async" />
+      </div>
+      <div class="price-box-content">
+        <span class="offer-expires">⏳ OFERTA POR TIEMPO LIMITADO</span>
 
-      <span class="offer-expires">⏳ OFERTA POR TIEMPO LIMITADO</span>
+        <p class="old-price">De <s>$79.40</s> hoy te llevas todo por:</p>
+        <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
+        <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
 
-      <p class="old-price">De <s>$79.40</s> hoy te llevas todo por:</p>
-      <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
-      <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
+        <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" target="_blank">
+          ✅ QUIERO AHORA · ACCEDER POR $6.90
+          <small>Acceso inmediato por email · Garantía de satisfacción</small>
+        </a>
 
-      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" target="_blank">
-        ✅ QUIERO AHORA · ACCEDER POR $6.90
-        <small>Acceso inmediato por email · Garantía de satisfacción</small>
-      </a>
-
-      <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
+        <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
+      </div>
     </div>
   </div>
 </section>
@@ -2128,16 +2139,18 @@
 <section style="padding-bottom:100px;">
   <div class="wrap">
     <div class="price-box">
-      <p style="font-size:clamp(20px,5vw,26px); font-weight:900; color:white; margin-bottom:20px; line-height:1.3;">No pierdas más tiempo.<br>Transforma tu alimentación hoy.</p>
-      <span class="offer-expires">⏳ Oferta por tiempo limitado</span>
-      <p class="old-price" style="margin-top:12px;">De <s>$79.40</s> hoy te llevas todo por:</p>
-      <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
-      <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
-      <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" target="_blank">
-        ✅ QUIERO AHORA · ACCEDER POR $6.90
-        <small>Acceso inmediato · Garantía de satisfacción · Pago Seguro</small>
-      </a>
-      <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
+      <div class="price-box-content">
+        <p style="font-size:clamp(20px,5vw,26px); font-weight:900; color:white; margin-bottom:20px; line-height:1.3;">No pierdas más tiempo.<br>Transforma tu alimentación hoy.</p>
+        <span class="offer-expires">⏳ Oferta por tiempo limitado</span>
+        <p class="old-price" style="margin-top:12px;">De <s>$79.40</s> hoy te llevas todo por:</p>
+        <p class="new-price"><sup>$</sup>6<span style="font-size:0.55em;letter-spacing:0">.90</span></p>
+        <p style="color:rgba(255,255,255,.55); font-size:13px; margin: -12px 0 6px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;">USD</p>
+        <a href="https://pay.hotmart.com/X106259699W?checkoutMode=10" class="btn-cta-yellow" target="_blank">
+          ✅ QUIERO AHORA · ACCEDER POR $6.90
+          <small>Acceso inmediato · Garantía de satisfacción · Pago Seguro</small>
+        </a>
+        <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top:16px;">🔒 Pago 100% seguro · Acceso inmediato</p>
+      </div>
     </div>
   </div>
 </section>
